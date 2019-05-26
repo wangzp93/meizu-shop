@@ -1,0 +1,98 @@
+<template>
+	<div id="app">
+		<router-view></router-view>
+		<nav class="main-router">
+			<!-- <router-link :to="{name: 'homeLink'}" tag="a">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-home"></use>
+				</svg><br>首页
+			</router-link> -->
+			<router-link v-for="router in routerList" :to="formatRouterLink(router.eng_name)" tag="a">
+				<svg class="icon" aria-hidden="true">
+					<use :xlink:href="formatSvgHref(router.eng_name)"></use>
+				</svg><br>{{ router.text }}
+			</router-link>
+		</nav>
+	</div>
+</template>
+
+<script>
+export default {
+	name: 'app',
+	data () {
+		return {
+			/**
+			 * 为使开发简便，路由地址与svg图标地址均与英文名字相关，
+			 * 所以添加新路由时要注意一下，避免出现英文名不同的情况
+			 */
+			routerList: [{
+				eng_name: "home",
+				text: "首页"
+			}, {
+				eng_name: "category",
+				text: "分类"
+			},/* {
+				eng_name: "find",
+				text: "发现"
+			}, */ {
+				eng_name: "cart",
+				text: "购物车"
+			}, {
+				eng_name: "me",
+				text: "我的"
+			}]
+		};
+	},
+	methods: {
+		//格式化路由地址
+		formatRouterLink (eng_name) {
+			return {
+				name: eng_name + "Link"
+			};
+		},
+		//格式化svg图标地址
+		formatSvgHref (eng_name) {
+			return "#icon-" + eng_name;
+		}
+	}
+}
+</script>
+
+<style lang="less">
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+#app {
+	padding-bottom: 56.23px;
+}
+/* 导航栏 */
+nav.main-router {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	color: #999;
+	font-size: 0.85em;
+	background-color: #fff;
+	z-index: 1000;
+	padding: 5px 0;
+	display: flex;
+	justify-content: space-around;
+	a {
+		text-align: center;
+		&.router-link-exact-active {
+			color: #007aff;
+		}
+		.icon {
+			width: 2.3em; height: 2.3em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+	}
+}
+
+
+</style>
