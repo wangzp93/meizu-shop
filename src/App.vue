@@ -10,7 +10,7 @@
 			<router-link v-for="router in routerList" :to="formatRouterLink(router.eng_name)" tag="a">
 				<svg class="icon" aria-hidden="true">
 					<use :xlink:href="formatSvgHref(router.eng_name)"></use>
-				</svg><br>{{ router.text }}
+				</svg><br><span>{{ router.text }}</span>
 			</router-link>
 		</nav>
 	</div>
