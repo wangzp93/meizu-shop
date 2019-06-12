@@ -73,7 +73,6 @@ nav.main-router {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	color: #999;
 	font-size: 0.85em;
 	background-color: #fff;
 	z-index: 1000;
@@ -81,6 +80,7 @@ nav.main-router {
 	display: flex;
 	justify-content: space-around;
 	a {
+		color: #999;
 		text-align: center;
 		&.router-link-exact-active {
 			color: #007aff;
