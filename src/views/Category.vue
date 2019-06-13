@@ -5,7 +5,8 @@
 			<!-- <router-link v-for="router in routerList"></router-link> -->
 		</nav>
 		<router-view></router-view>
-		<custom-dialog></custom-dialog>
+		<custom-dialog v-if="isDialog"></custom-dialog>
+		<button v-on:click="showDialog">弹窗</button>
 	</div>
 </template>
 
@@ -15,14 +16,20 @@
 export default {
 	data() {
 		return {
-			navList:[]
+			navList:[],
+			isDialog: false
 		};
 	},
 	components: {
 		CustomDialog
 	},
 	methods: {
-		
+		showDialog() {
+			this.isDialog = true;
+		},
+		hideDialog() {
+			this.isDialog = false;
+		}
 	}
 }
 </script>

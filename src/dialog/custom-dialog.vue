@@ -69,7 +69,6 @@
 			}
 		}
 		.dialog-body {
-			height: 55vh;
 			padding: 1.5vw;
 			overflow-y: auto;
 			font-size: 2vw;
