@@ -5,8 +5,10 @@
 			<!-- <router-link v-for="router in routerList"></router-link> -->
 		</nav>
 		<router-view></router-view>
-		<custom-dialog v-if="isDialog"></custom-dialog>
-		<button v-on:click="showDialog">弹窗</button>
+		<custom-dialog :options="dialogOption" @yesFun="success" @noFun="hideDialog">
+			<p slot="dialog-content">法拉涉及到法律就撒地方事件砥砺奋进士大夫吉林省的两室就得傅雷家书多了几分两室就得了圣诞节福利熟练度 塑料袋积分</p>
+		</custom-dialog>
+		<button @click="showDialog">弹窗</button>
 	</div>
 </template>
 
@@ -17,7 +19,12 @@ export default {
 	data() {
 		return {
 			navList:[],
-			isDialog: false
+			dialogOption: {
+				title: "I'm title",
+				yesText: "yes",
+				noText: "no",
+				isShow: false
+			}
 		};
 	},
 	components: {
@@ -25,10 +32,13 @@ export default {
 	},
 	methods: {
 		showDialog() {
-			this.isDialog = true;
+			this.dialogOption.isShow = true;
 		},
 		hideDialog() {
-			this.isDialog = false;
+			this.dialogOption.isShow = false;
+		},
+		success() {
+			alert("success");
 		}
 	}
 }

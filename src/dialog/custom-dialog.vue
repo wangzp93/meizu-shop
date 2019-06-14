@@ -1,20 +1,18 @@
 <!-- 弹窗组件 -->
 <template>
-	<div>
+	<div v-if="options.isShow">
 		<div class="dialog-mask"></div>
 		<div class="dialog-panel">
 			<h2 class="dialog-header">
-				{{ title }}
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#icon-close"></use>
-				</svg>
+				<span>{{ options.title }}</span>
+				<span @click="noFun" class="dialog-close">×</span>
 			</h2>
 			<div class="dialog-body">
-				水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费水电费
+				<slot name="dialog-content"></slot>
 			</div>
 			<footer class="dialog-footer">
-				<button class="dialog-btn-yes">确定</button>
-				<button class="dialog-btn-no">取消</button>
+				<button @click="yesFun" class="dialog-btn-yes">{{ options.yesText }}</button>
+				<button @click="noFun" class="dialog-btn-no">{{ options.noText }}</button>
 			</footer>
 		</div>
 	</div>
@@ -25,6 +23,20 @@
 		data() {
 			return {
 				title: "标题"
+			}
+		},
+		props: {
+			options: {
+				
+			}
+		},
+		methods: {
+			yesFun() {
+				this.$emit("yesFun");
+			},
+			noFun() {
+				// this.options.isShow = false;
+				this.$emit("noFun");
 			}
 		}
 	}
@@ -57,14 +69,8 @@
 			color: #FFF;
 			border-radius: 1vw 1vw 0 0;
 			font-size: 3vw;
-			.icon {
-				width: 1.5vw;
-				height: 1.5vw;
-				fill: currentColor;
-				overflow: hidden;
-				
+			.dialog-close {
 				float: right;
-				margin-top: 1.5vw;
 				cursor: pointer;
 			}
 		}
@@ -82,7 +88,7 @@
 				width: 20vw;
 				height: 5vw;
 				border-radius: 5vw;
-				margin: 0.8vw 0;
+				margin: 1vw 0;
 				font-size: 2vw;
 				border: none;
 				outline: none;
