@@ -59,40 +59,38 @@ export default {
 </script>
 
 <style lang="less">
-* {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-}
-#app {
-	padding-bottom: 56.23px;
-}
-/* 导航栏 */
-nav.main-router {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	font-size: 0.85em;
-	background-color: #fff;
-	z-index: 1000;
-	padding: 5px 0;
-	display: flex;
-	justify-content: space-around;
-	a {
-		color: #999;
-		text-align: center;
-		&.router-link-exact-active {
-			color: #007aff;
-		}
-		.icon {
-			width: 2.3em; height: 2.3em;
-			vertical-align: -0.15em;
-			fill: currentColor;
-			overflow: hidden;
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration: none;
+	}
+	#app {
+		padding-bottom: 56.23px;
+	}
+	/* 导航栏 */
+	nav.main-router {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		font-size: 0.85em;
+		background-color: #fff;
+		z-index: 1000;
+		padding: 5px 0;
+		display: flex;
+		justify-content: space-around;
+		a {
+			color: #999;
+			text-align: center;
+			&.router-link-exact-active {
+				color: #007aff;
+			}
+			.icon {
+				width: 2.3em; height: 2.3em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
 		}
 	}
-}
-
-
 </style>

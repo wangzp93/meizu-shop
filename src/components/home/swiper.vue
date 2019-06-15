@@ -57,18 +57,18 @@
 </script>
 
 <style>
-/* 轮播图 图片 */
-.swiper-container .banner-wrapper-img {
-	display: block;
-	width: 100%;
-}
-/* 轮播图 页码 */
-.swiper-container .swiper-pagination-bullet {
-	background-color: #FFF;
-	opacity: 0.5;
-}
-/* 当前显示的 */
-.swiper-container .swiper-pagination-bullet-active {
-	opacity: 1;
-}
+	/* 轮播图 图片 */
+	.swiper-container .banner-wrapper-img {
+		display: block;
+		width: 100%;
+	}
+	/* 轮播图 页码 */
+	.swiper-container .swiper-pagination-bullet {
+		background-color: #FFF;
+		opacity: 0.5;
+	}
+	/* 当前显示的 */
+	.swiper-container .swiper-pagination-bullet-active {
+		opacity: 1;
+	}
 </style>

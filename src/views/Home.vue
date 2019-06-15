@@ -33,7 +33,7 @@
 </script>
 
 <style>
-.home {
-	background: #F4F4F4;
-}
+	.home {
+		background: #F4F4F4;
+	}
 </style>

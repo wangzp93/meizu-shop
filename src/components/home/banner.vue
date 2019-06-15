@@ -35,20 +35,20 @@ export default {
 </script>
 
 <style lang="less">
-.index-banner {
-    display: flex;
-	.row {
-	    width: 50%;
-		.banner-lg {
-			width: 100%;
-			a {
-			    display: block;
-				img {
-				    width: 100%;
+	.index-banner {
+		display: flex;
+		.row {
+			width: 50%;
+			.banner-lg {
+				width: 100%;
+				a {
 					display: block;
+					img {
+						width: 100%;
+						display: block;
+					}
 				}
 			}
 		}
 	}
-}
 </style>
