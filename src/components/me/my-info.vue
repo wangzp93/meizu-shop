@@ -1,8 +1,8 @@
 <template>
 	<div class="my-info">
 		<!-- 功能按钮 -->
-		<i @click="back" class="icon-previous">
-			<svg-icon iconName="previous"></svg-icon>
+		<i @click="back" class="icon-back">
+			<svg-icon iconName="back"></svg-icon>
 		</i>
 		<i class="icon-msg">
 			<svg-icon iconName="msg"></svg-icon>
@@ -37,7 +37,7 @@
 		background: linear-gradient(rgb(0, 187, 232), rgb(0, 146, 221));
 		padding: 5vw;
 		// 功能按钮
-		.icon-previous {
+		.icon-back {
 			float: left;
 		}
 		.icon-msg {

@@ -3,7 +3,7 @@
 	<div class="index-hot-site">
 		<!-- 上半部 -->
 		<div class="hot-tip-bar">
-			<span v-for="tipBar in tipBarList" class="icon">
+			<span v-for="tipBar in tipBarList">
 				<img :src="tipBar.img_src">{{ tipBar.text }}
 			</span>
 		</div>

@@ -65,17 +65,17 @@ export default {
 		text-decoration: none;
 	}
 	#app {
-		padding-bottom: 56.23px;
+		padding-bottom: 11.4vw;
 	}
 	/* 导航栏 */
 	nav.main-router {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		font-size: 0.85em;
+		font-size: 2.5vw;
 		background-color: #fff;
 		z-index: 1000;
-		padding: 5px 0;
+		padding: 1vw 0;
 		display: flex;
 		justify-content: space-around;
 		a {
@@ -85,7 +85,7 @@ export default {
 				color: #007aff;
 			}
 			.icon {
-				font-size: 2.3em;
+				font-size: 6vw;
 			}
 		}
 	}
