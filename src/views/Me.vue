@@ -28,7 +28,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.me-index {
 		background: #EEE;
 	}

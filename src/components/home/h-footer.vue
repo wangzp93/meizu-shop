@@ -55,7 +55,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	/* 底部 */
 	footer.main-footer {
 		/* 返回顶部 */
@@ -64,8 +64,8 @@
 			justify-content: center;
 			align-items: center;
 			height: 17.22222vw;
-			// margin-top: -3vw;
 			background: #f4f4f4;
+			cursor: pointer;
 			span {
 				display: inline-block;
 				color: #999;

@@ -58,7 +58,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	/* 外部框 */
 	.index-hot-site {
 		background: #fff;

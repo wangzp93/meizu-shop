@@ -462,7 +462,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	/* 全局公共样式 */
 	/* 标题 */
 	.list-title {

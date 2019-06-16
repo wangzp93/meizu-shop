@@ -32,7 +32,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.home {
 		background: #F4F4F4;
 	}
