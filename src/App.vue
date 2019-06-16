@@ -8,9 +8,8 @@
 				</svg><br>首页
 			</router-link> -->
 			<router-link v-for="router in routerList" :to="formatRouterLink(router.eng_name)" tag="a">
-				<svg class="icon" aria-hidden="true">
-					<use :xlink:href="formatSvgHref(router.eng_name)"></use>
-				</svg><br><span>{{ router.text }}</span>
+				<svg-icon :iconName="router.eng_name"></svg-icon><br>
+				<span>{{ router.text }}</span>
 			</router-link>
 		</nav>
 	</div>
@@ -86,10 +85,7 @@ export default {
 				color: #007aff;
 			}
 			.icon {
-				width: 2.3em; height: 2.3em;
-				vertical-align: -0.15em;
-				fill: currentColor;
-				overflow: hidden;
+				font-size: 2.3em;
 			}
 		}
 	}
