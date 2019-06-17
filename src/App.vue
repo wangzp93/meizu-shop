@@ -1,6 +1,8 @@
 <template>
 	<div id="app">
-		<router-view></router-view>
+		<div class="main-router-view">
+			<router-view></router-view>
+		</div>
 		<nav class="main-router">
 			<!-- <router-link :to="{name: 'homeLink'}" tag="a">
 				<svg class="icon" aria-hidden="true">
@@ -65,17 +67,20 @@ export default {
 		text-decoration: none;
 	}
 	#app {
-		padding-bottom: 11.4vw;
+		.main-router-view {
+			max-height: 88.5vh;
+			overflow: auto;
+		}
 	}
 	/* 导航栏 */
 	nav.main-router {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		font-size: 2.5vw;
+		font-size: 2.5vh;
 		background-color: #fff;
 		z-index: 1000;
-		padding: 1vw 0;
+		padding: 1vh 0;
 		display: flex;
 		justify-content: space-around;
 		a {
@@ -85,7 +90,7 @@ export default {
 				color: #007aff;
 			}
 			.icon {
-				font-size: 6vw;
+				font-size: 6vh;
 			}
 		}
 	}

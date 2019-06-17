@@ -25,9 +25,9 @@
 
 <style lang="less" scoped>
 	.cart {
-		min-height: 100vh;
+		min-height: 88.5vh;
 		background: #EEE;
-		margin-bottom: -11.4vw;
+		// margin-bottom: -11.4vw;
 		.title {
 			line-height: 8.8vw;
 			text-align: center;

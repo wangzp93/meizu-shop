@@ -43,12 +43,13 @@
 		methods: {
 			// 返回顶部
 			toTheTop() {
+				var el = document.getElementsByClassName("main-router-view")[0];
 				var timer = setInterval(function() {
-					window.scrollBy(0, -100);
-					var scrollY = document.body.scrollTop + document.documentElement.scrollTop;
-					if (scrollY <=0 ) {
+					var scrollY = el.scrollTop;
+					if (scrollY <= 0) {
 						clearInterval(timer);
 					}
+					el.scrollBy(0, -100);
 				}, 5);
 			}
 		}
