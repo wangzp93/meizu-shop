@@ -1,35 +1,19 @@
 <template>
-	<div>
-		<h1>分类</h1>
-		<nav>
-			<router-link to="/phone" tag="div">手机</router-link>
-			<router-link to="/category/audio" tag="div">声学</router-link>
+	<div class="category">
+		<nav class="category-nav">
+			<router-link to="/category/recommend" tag="a"><span></span>推荐</router-link>
+			<router-link to="/category/phone" tag="a"><span></span>手机</router-link>
+			<router-link to="/category/audio" tag="a"><span></span>声学</router-link>
+			<router-link to="/category/section" tag="a"><span></span>配件</router-link>
+			<router-link to="/category/surround" tag="a"><span></span>周边</router-link>
 		</nav>
-		<router-view></router-view>
+		<div class="category-content">
+			<router-view></router-view>
+		</div>
 	</div>
 </template>
 
 <script>
-	import Vue from 'vue'
-	
-	import Recommend from '../components/category/recommend'
-	import Phone from '../components/category/phone'
-	import Audio from '../components/category/audio'
-	import Section from '../components/category/section'
-	import Surround from '../components/category/surround'
-	
-	import VueRouter from 'vue-router'
-	Vue.use(VueRouter);
-	
-	var router = new VueRouter({
-		routers: [
-			{path: "/recommend", component: Recommend},
-			{path: "/phone", component: Phone},
-			{path: "/category/audio", component: Audio},
-			{path: "/section", component: Section},
-			{path: "/surround", component: Surround}
-		]
-	});
 	export default {
 		data() {
 			return {
@@ -37,15 +21,45 @@
 			};
 		},
 		components: {
-			Phone,
-			Audio
+			
 		},
 		methods: {
 			
-		},
-		router
+		}
 	}
 </script>
 
-<style>
+<style lang="less" scoped>
+	.category {
+		.category-nav {
+			width: 12vw;
+			float: left;
+			a {
+				display: block;
+				color: #000;
+				font-size: 2.5vw;
+				// line-height: 8vw;
+				// height: 8vw;
+				padding: 2vw 0;
+				text-align: center;
+				span {
+					float: left;
+					width: 0.3em;
+					height: 1.3em;
+					vertical-align: middle;
+				}
+				&.router-link-exact-active {
+					color: #007aff;
+					span {
+						background: #007aff;
+					}
+				}
+			}
+		}
+		.category-content {
+			margin-left: 12vw;
+			min-height: 88.5vh;
+			border-left: 1px solid #ccc;
+		}
+	}
 </style>
