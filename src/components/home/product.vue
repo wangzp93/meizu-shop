@@ -12,18 +12,7 @@
 				</a>
 			</div>
 			<!-- 手机列表  -->
-			<div class="product-list">
-				<div v-for="phone in phone.list" class="product-content">
-					<a :href="phone.a_href">
-						<img :src="phone.img_src" :lazy-src="phone.img_src" :alt="phone.name">
-						<div class="info">
-							<p class="products-name">{{ phone.name }}</p>
-							<p class="slogan"><span class="slogan-feature"><span class="slogan-special">{{ phone.slogan }}</span>{{ phone.feature }}</span></p>
-							<p class="price"><i>{{ phone.unit }}</i>{{ phone.price }}</p>
-						</div>
-					</a>
-				</div>
-			</div>
+			<product-list :productList="phone.list"></product-list>
 		</div>
 		
 		<!-- 耳机 -->
@@ -46,18 +35,7 @@
 				</div>
 			</div>
 			<!-- 耳机列表 -->
-			<div class="product-list">
-				<div v-for="audio in audio.list" class="product-content">
-					<a :href="audio.a_href">
-						<img :src="audio.img_src" :lazy-src="audio.img_src" :alt="audio.name">
-						<div class="info">
-							<p class="products-name">{{ audio.name }}</p>
-							<p class="slogan"><span class="slogan-feature"><span class="slogan-special">{{ audio.slogan }}</span>{{ audio.feature }}</span></p>
-							<p class="price"><i>{{ audio.unit }}</i>{{ audio.price }}<span class="history-price">{{ audio.historyPrice }}</span></p>
-						</div>
-					</a>
-				</div>
-			</div>
+			<product-list :productList="audio.list"></product-list>
 		</div>
 		
 		<!-- 配件 -->
@@ -80,18 +58,7 @@
 				</div>
 			</div>
 			<!-- 配件列表 -->
-			<div class="product-list">
-				<div v-for="section in section.list" class="product-content">
-					<a :href="section.a_href">
-						<img :src="section.img_src" :lazy-src="section.img_src" :alt="section.name">
-						<div class="info">
-							<p class="products-name">{{ section.name }}</p>
-							<p class="slogan"><span class="slogan-feature"><span class="slogan-special">{{ section.slogan }}</span>{{ section.feature }}</span></p>
-							<p class="price"><i>{{ section.unit }}</i>{{ section.price }}<span class="history-price">{{ section.historyPrice }}</span></p>
-						</div>
-					</a>
-				</div>
-			</div>
+			<product-list :productList="section.list"></product-list>
 		</div>
 		
 		<!-- 生活周边 -->
@@ -114,24 +81,17 @@
 				</div>
 			</div>
 			<!-- 周边列表 -->
-			<div class="product-list">
-				<div v-for="surround in surround.list" class="product-content">
-					<a :href="surround.a_href">
-						<img :src="surround.img_src" :lazy-src="surround.img_src" :alt="surround.name">
-						<div class="info">
-							<p class="products-name">{{ surround.name }}</p>
-							<p class="slogan"><span class="slogan-feature"><span class="slogan-special">{{ surround.slogan }}</span>{{ surround.feature }}</span></p>
-							<p class="price"><i>{{ surround.unit }}</i>{{ surround.price }}<span class="history-price">{{ surround.historyPrice }}</span></p>
-						</div>
-					</a>
-				</div>
-			</div>
+			<product-list :productList="surround.list"></product-list>
 		</div>
 	</div>
 </template>
 
 <script>
+	import ProductList from './product/product-list'
 	export default {
+		components: {
+			ProductList
+		},
 		data() {
 			return {
 				//手机
@@ -480,87 +440,6 @@
 			-webkit-transform: translate(-50%);
 			transform: translate(-50%);
 			bottom: 4vw;
-		}
-	}
-
-	/* 产品列表 */
-	.product-list {
-		display: flex;
-		flex-wrap: wrap;
-		background: #f4f4f4;
-		padding-top: 1.5vw;
-		align-items: center;
-		justify-content: space-between;
-		/* 产品内容 */
-		.product-content {
-			position: relative;
-			width: 49.2%;
-			text-align: center;
-			background: #fff;
-			padding-top: 6.2963vw;
-			padding-bottom: 4.90741vw;
-			margin-bottom: 1.11111vw;
-			box-sizing: border-box;
-			/* 产品图片 */
-			img {
-				display: inline-block;
-				width: 85%;
-				min-height: 100px;
-				will-change: height;
-			}
-			/* 产品名称 */
-			.products-name {
-				font-size: 3.88889vw;
-				color: #333;
-				font-weight: 700;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				overflow: hidden;
-			}
-			/* 产品特点 外框 */
-			.slogan {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-size: 3.33333vw;
-				margin: 0 1.5vw;
-				margin-top: 1.75926vw;
-				margin-bottom: 2.5vw;
-				/* 产品特点 内容 */
-				.slogan-feature {
-					padding: 0 1.25vw;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-					color: #c00;
-					border: 1px solid #c00;
-					line-height: 4.62963vw;
-					/* 产品特点 着重显示 */
-					.slogan-special {
-						float: left;
-						padding: 0 1.25vw;
-						margin-left: -1.25vw;
-						margin-right: 1.25vw;
-						color: #fff;
-						background-color: #c00;
-					}
-				}
-			}
-			/* 价格 */
-			.price {
-				font-size: 3.88889vw;
-				color: #c00;
-				i {
-					font-style: normal;
-					font-size: 2.8vw;
-				}
-				.history-price {
-					color: #999;
-					font-size: 3vw;
-					padding-left: 1vw;
-					text-decoration: line-through;
-				}
-			}
 		}
 	}
 
