@@ -87,7 +87,6 @@ export default {
 			color: #999;
 			text-align: center;
 			&.router-link-active {
-			// &.u-link--Active {
 				color: #007aff;
 			}
 			.icon {

@@ -12,7 +12,6 @@ import Surround from './components/category/surround'
 
 export const routes = [
 	{path: "/home", component: Home, name: "homeLink"},
-	{path: "/", redirect: "/home"},
 	{path: "/category", component: Category, redirect: "/category/recommend", name: "categoryLink",
 		children: [
 			{path: "/category/recommend", component: Recommend, name: "recommendLink"},
@@ -25,4 +24,5 @@ export const routes = [
 	{path: "/find", component: Find, name: "findLink"},
 	{path: "/cart", component: Cart, name: "cartLink"},
 	{path: "/me", component: Me, name: "meLink"},
+	{path: "/", redirect: "/home"},
 ];

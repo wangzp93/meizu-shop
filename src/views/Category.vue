@@ -38,8 +38,6 @@
 				display: block;
 				color: #000;
 				font-size: 2.5vw;
-				// line-height: 8vw;
-				// height: 8vw;
 				padding: 2vw 0;
 				text-align: center;
 				span {
@@ -49,7 +47,6 @@
 					vertical-align: middle;
 				}
 				&.router-link-active {
-				// &.u-link--Active {
 					color: #007aff;
 					span {
 						background: #007aff;
