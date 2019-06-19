@@ -9,7 +9,7 @@
 					<use xlink:href="#icon-home"></use>
 				</svg><br>首页
 			</router-link> -->
-			<router-link v-for="router in routerList" :to="formatRouterLink(router.eng_name)" tag="a">
+			<router-link v-for="(router, index) in routerList" :key="index" :to="formatRouterLink(router.eng_name)" tag="a">
 				<svg-icon :iconName="router.eng_name"></svg-icon><br>
 				<span>{{ router.text }}</span>
 			</router-link>
@@ -86,7 +86,8 @@ export default {
 		a {
 			color: #999;
 			text-align: center;
-			&.router-link-exact-active {
+			&.router-link-active {
+			// &.u-link--Active {
 				color: #007aff;
 			}
 			.icon {

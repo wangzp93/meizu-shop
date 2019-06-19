@@ -15,6 +15,7 @@ Vue.component("svg-icon", SvgIcon);
 const router = new VueRouter({
 	routes,
 	mode: 'history',
+	// linkActiveClass: 'u-link--Active', // 这是链接激活时的class
 	scrollBehavior (to, from, savedPosition) {
 		if (savedPosition) {
 			return savedPosition;

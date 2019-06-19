@@ -1,11 +1,11 @@
 <template>
 	<div class="category">
 		<nav class="category-nav">
-			<router-link to="/category/recommend" tag="a"><span></span>推荐</router-link>
-			<router-link to="/category/phone" tag="a"><span></span>手机</router-link>
-			<router-link to="/category/audio" tag="a"><span></span>声学</router-link>
-			<router-link to="/category/section" tag="a"><span></span>配件</router-link>
-			<router-link to="/category/surround" tag="a"><span></span>周边</router-link>
+			<router-link key="1" to="/category/recommend" tag="a"><span></span>推荐</router-link>
+			<router-link key="2" to="/category/phone" tag="a"><span></span>手机</router-link>
+			<router-link key="3" to="/category/audio" tag="a"><span></span>声学</router-link>
+			<router-link key="4" to="/category/section" tag="a"><span></span>配件</router-link>
+			<router-link key="5" to="/category/surround" tag="a"><span></span>周边</router-link>
 		</nav>
 		<div class="category-content">
 			<router-view></router-view>
@@ -48,7 +48,8 @@
 					height: 1.3em;
 					vertical-align: middle;
 				}
-				&.router-link-exact-active {
+				&.router-link-active {
+				// &.u-link--Active {
 					color: #007aff;
 					span {
 						background: #007aff;
