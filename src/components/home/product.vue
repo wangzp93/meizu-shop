@@ -20,20 +20,7 @@
 			<!-- 标题 -->
 			<h3 class="list-title">{{ audio.title }}</h3>
 			<!-- 广告 -->
-			<div class="list-ad">
-				<div v-for="ad in audio.ad" class="accessoary-ad">
-					<a :href="ad.a_href">
-						<div class="accessoary-ad-detail">
-							<h4 class="ad-name">{{ ad.name }}</h4>
-							<p class="ad-feature">{{ ad.feature }}</p>
-							<p class="ad-price">
-								<i>{{ ad.unit }}</i>{{ ad.price }}
-							</p>
-						</div>
-						<img class="lazy-img loaded-img" :data-src="ad.img_src" alt="" actived="actived" :src="ad.img_src">
-					</a>
-				</div>
-			</div>
+			<ad-list :adList="audio.ad"></ad-list>
 			<!-- 耳机列表 -->
 			<product-list :productList="audio.list"></product-list>
 		</div>
@@ -43,20 +30,8 @@
 			<!-- 标题 -->
 			<h3 class="list-title">{{ section.title }}</h3>
 			<!-- 广告 -->
-			<div class="list-ad">
-				<div v-for="ad in section.ad" class="accessoary-ad">
-					<a :href="ad.a_href">
-						<div class="accessoary-ad-detail">
-							<h4 class="ad-name">{{ ad.name }}</h4>
-							<p class="ad-feature">{{ ad.feature }}</p>
-							<p class="ad-price">
-								<i>{{ ad.unit }}</i>{{ ad.price }}
-							</p>
-						</div>
-						<img class="lazy-img loaded-img" :data-src="ad.img_src" alt="" actived="actived" :src="ad.img_src">
-					</a>
-				</div>
-			</div>
+			<ad-list :adList="section.ad"></ad-list>
+			
 			<!-- 配件列表 -->
 			<product-list :productList="section.list"></product-list>
 		</div>
@@ -66,20 +41,7 @@
 			<!-- 标题 -->
 			<h3 class="list-title">{{ surround.title }}</h3>
 			<!-- 广告 -->
-			<div class="list-ad">
-				<div v-for="ad in surround.ad" class="accessoary-ad">
-					<a :href="ad.a_href">
-						<div class="accessoary-ad-detail">
-							<h4 class="ad-name">{{ ad.name }}</h4>
-							<p class="ad-feature">{{ ad.feature }}</p>
-							<p class="ad-price">
-								<i>{{ ad.unit }}</i>{{ ad.price }}
-							</p>
-						</div>
-						<img class="lazy-img loaded-img" :data-src="ad.img_src" alt="" actived="actived" :src="ad.img_src">
-					</a>
-				</div>
-			</div>
+			<ad-list :adList="surround.ad"></ad-list>
 			<!-- 周边列表 -->
 			<product-list :productList="surround.list"></product-list>
 		</div>
@@ -88,9 +50,11 @@
 
 <script>
 	import ProductList from './product/product-list'
+	import AdList from './product/ad-list'
 	export default {
 		components: {
-			ProductList
+			ProductList,
+			AdList
 		},
 		data() {
 			return {
@@ -422,7 +386,7 @@
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 	/* 全局公共样式 */
 	/* 标题 */
 	.list-title {
@@ -462,80 +426,6 @@
 				}
 			}
 		}
-	}
-
-	/* 耳机,智能配件,生活周边 公共样式 */
-	.index-audio,
-	.index-section,
-	.index-surround{
-		/* 广告图片 */
-		.list-ad {
-			.accessoary-ad {
-				a {
-					display: block;
-					img {
-						width: 50%;
-						display: block;
-					}
-				}
-				/* 广告描述 */
-				.accessoary-ad-detail {
-					position: relative;
-					width: 50%;
-					height: 43vw;
-					line-height: 6vw;
-					padding: 3.88889vw;
-					box-sizing: border-box;
-					.ad-name {
-						font-size: 4.62963vw;
-						font-weight: 400;
-						color: #fff;
-						width: 33.33333vw;
-						display: -webkit-box;
-						-webkit-box-orient: vertical;
-						-webkit-line-clamp: 2;
-						overflow: hidden;
-					}
-					.ad-feature {
-						font-size: 3.33333vw;
-						color: hsla(0,0%,100%,.7);
-						position: relative;
-						line-height: 1.2;
-						padding: 1.2vw 0;
-						&:after {
-							position: absolute;
-							content: "";
-							width: 5vw;
-							height: .5vw;
-							background: #fff;
-							left: 0;
-							bottom: -1.5vw;
-						}
-					}
-					.ad-price {
-						position: absolute;
-						left: 3.88889vw;
-						bottom: 6vw;
-						color: hsla(0,0%,100%,.7);
-						font-size: 4.62963vw;
-						i {
-							font-style: normal;
-						}
-					}
-				}
-				&:nth-child(odd) {
-					.accessoary-ad-detail{
-						float: right;
-					}
-				} 
-				&:nth-child(even) {
-					.accessoary-ad-detail{
-						float: left;
-					}
-				}
-			}
-		}
-			
 	}
 
 	/* 耳机 */
