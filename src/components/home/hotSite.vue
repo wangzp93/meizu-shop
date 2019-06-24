@@ -23,6 +23,9 @@
 
 <script>
 	export default {
+		beforeMount() {
+			
+		},
 		data() {
 			return {
 				tipBarList: [{
