@@ -9,27 +9,15 @@
 				<img :src="ad.img_src" :lazy-src="ad.img_src" alt="">
 			</a>
 		</div>
-		<!-- 手机列表  -->
-		<div class="product-list">
-			<div v-for="phone in list" class="product-content">
-				<a :href="phone.a_href">
-					<img :src="phone.img_src" :lazy-src="phone.img_src" :alt="phone.name">
-					<div class="info">
-						<p class="products-name">{{ phone.name }}</p>
-						<p class="slogan"><span class="slogan-feature"><span class="slogan-special">{{ phone.slogan }}</span>{{ phone.feature }}</span></p>
-						<p class="price"><i>{{ phone.unit }}</i>{{ phone.price }}</p>
-					</div>
-				</a>
-			</div>
-		</div>
+		<product-list :productList="list"></product-list>
 	</div>
 </template>
 
 <script>
+	import ProductList from '../home/product/product-list.vue'
 	export default {
 		data() {
 			return {
-				
 				title: "智能手机",
 				ad: {
 					a_href: "https://detail.meizu.com/item/meizu16x.html",
@@ -101,9 +89,31 @@
 					price: 1798
 				}]
 			}
+		},
+		components: {
+			ProductList
 		}
 	}
 </script>
 
 <style lang="less" scoped>
+	/* 手机 */
+	.index-phone {
+		/* title颜色 */
+		.list-title {
+			&:after {
+				background: #0bbbef;
+			}
+		}
+		/* 广告图片 */
+		.list-ad {
+			a {
+				display: block;
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
 </style>

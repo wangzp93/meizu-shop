@@ -2,18 +2,7 @@
 <template>
 	<div>
 		<!-- 手机-->
-		<div class="index-phone">
-			<!-- 标题 -->
-			<h3 class="list-title">{{ phone.title }}</h3>
-			<!-- 广告 -->
-			<div class="list-ad">
-				<a :href="phone.ad.a_href">
-					<img :src="phone.ad.img_src" :lazy-src="phone.ad.img_src" alt="">
-				</a>
-			</div>
-			<!-- 手机列表  -->
-			<product-list :productList="phone.list"></product-list>
-		</div>
+		<p-phone></p-phone>
 		
 		<!-- 耳机 -->
 		<div class="index-audio">
@@ -51,10 +40,14 @@
 <script>
 	import ProductList from './product/product-list'
 	import AdList from './product/ad-list'
+	
+	import PPhone from '../category/p-phone.vue'
+	
 	export default {
 		components: {
 			ProductList,
-			AdList
+			AdList,
+			PPhone,
 		},
 		data() {
 			return {
