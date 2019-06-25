@@ -2,20 +2,29 @@
 <template>
 	<div class="index-phone">
 		<!-- 标题 -->
-		<h3 class="list-title">{{ title }}</h3>
+		<product-title :title="title"></product-title>
+		
 		<!-- 广告 -->
 		<div class="list-ad">
 			<a :href="ad.a_href">
 				<img :src="ad.img_src" :lazy-src="ad.img_src" alt="">
 			</a>
 		</div>
+		
+		<!-- 手机列表 -->
 		<product-list :productList="list"></product-list>
 	</div>
 </template>
 
 <script>
+	import ProductTitle from '../home/product/product-title.vue'
 	import ProductList from '../home/product/product-list.vue'
+	
 	export default {
+		components: {
+			ProductTitle,
+			ProductList
+		},
 		data() {
 			return {
 				title: "智能手机",
@@ -89,9 +98,6 @@
 					price: 1798
 				}]
 			}
-		},
-		components: {
-			ProductList
 		}
 	}
 </script>

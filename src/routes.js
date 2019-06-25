@@ -4,7 +4,6 @@ import Find from './views/Find'
 import Cart from './views/Cart'
 import Me from './views/Me'
 
-import Recommend from './components/category/recommend'
 import Phone from './components/category/phone'
 import Audio from './components/category/audio'
 import Section from './components/category/section'
@@ -12,9 +11,8 @@ import Surround from './components/category/surround'
 
 export const routes = [
 	{path: "/home", component: Home, name: "homeLink"},
-	{path: "/category", component: Category, redirect: "/category/recommend", name: "categoryLink",
+	{path: "/category", component: Category, redirect: "/category/phone", name: "categoryLink",
 		children: [
-			{path: "/category/recommend", component: Recommend, name: "recommendLink"},
 			{path: "/category/phone", component: Phone, name: "phoneLink"},
 			{path: "/category/audio", component: Audio, name: "audioLink"},
 			{path: "/category/section", component: Section, name: "sectionLink"},
