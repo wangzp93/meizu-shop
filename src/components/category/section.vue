@@ -124,7 +124,7 @@
 		}
 		/* 广告背景颜色 */
 		.list-ad {
-			.accessoary-ad {
+			/deep/ .accessoary-ad {
 				&:nth-child(odd) {
 					background: #55C3C3;
 				} 

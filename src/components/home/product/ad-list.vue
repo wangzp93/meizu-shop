@@ -42,7 +42,7 @@
 			.accessoary-ad-detail {
 				position: relative;
 				width: 50%;
-				height: 43vw;
+				height: 38vw;
 				line-height: 6vw;
 				padding: 3.88889vw;
 				box-sizing: border-box;
@@ -75,7 +75,8 @@
 				.ad-price {
 					position: absolute;
 					left: 3.88889vw;
-					bottom: 6vw;
+					bottom: 3vw;
+					// margin-top: 6vw;
 					color: hsla(0,0%,100%,.7);
 					font-size: 4.62963vw;
 					i {

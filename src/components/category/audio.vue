@@ -25,6 +25,7 @@
 		},
 		data() {
 			return {
+				color: "",
 				title: "魅族声学",
 				ad: [{
 					a_href: "https://detail.meizu.com/item/meizu_TW50s.html",
@@ -128,7 +129,8 @@
 		}
 		/* 广告背景颜色 */
 		.list-ad {
-			.accessoary-ad {
+			/deep/ .accessoary-ad {
+				background: blue;
 				&:nth-child(odd) {
 					background: rgb(245, 92, 92);
 				} 

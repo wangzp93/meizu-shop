@@ -29,7 +29,7 @@
 				ad: [{
 					a_href: "https://detail.meizu.com/item/meizu_Citybag.html",
 					img_src: "https://fms.res.meizu.com/dms/2019/04/23/3ccd19e4-7cf0-4f4f-bde1-c08f51e8f037.jpg",
-					name: "魅族极简都市双肩包",
+					name: "魅族都市双肩包",
 					feature: "650D高耐磨牛津布 大容量多功能收纳",
 					unit: "￥",
 					price: 179
@@ -109,7 +109,7 @@
 		}
 		/* 广告背景颜色 */
 		.list-ad {
-			.accessoary-ad {
+			/deep/ .accessoary-ad {
 				&:nth-child(odd) {
 					background: rgb(245, 92, 92);
 				} 
