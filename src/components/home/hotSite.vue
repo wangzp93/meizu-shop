@@ -22,13 +22,22 @@
 </template>
 
 <script>
+	import axios from 'axios'
+	
 	export default {
 		beforeMount() {
-			
+			axios.post("./static/hotSite.json")
+			.then(function(data) {
+				alert(data)
+			}).catch(function(error) {
+				
+			});
 		},
 		data() {
 			return {
-				tipBarList: [{
+				tipBarList: [],
+				hotSideList: []
+				/* tipBarList: [{
 					img_src: "https://fms.res.meizu.com/dms/2018/03/30/99f49dfe-25c2-485a-b7b3-8b63d6487b46.png",
 					text: "魅族官方直供"
 				}, {
@@ -55,7 +64,7 @@
 					a_href: "http://mformy.meizu.com/?click=mall_index_menu_4",
 					img_src: "https://fms.res.meizu.com/dms/2019/03/25/cd5abc64-149e-4e46-875b-4a2358736e9f.png",
 					text: "M码通道"
-				}]
+				}] */
 			};
 		}
 	}
