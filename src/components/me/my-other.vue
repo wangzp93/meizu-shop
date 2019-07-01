@@ -9,53 +9,48 @@
 
 <script>
 export default {
-    data() {
+    beforeMount () {
+        this.$axios({
+            url: '../../../static/data/me/my-other.json',
+            method: 'get'
+        }).then(resp => {
+            if (resp.status === 200) {
+                var data = resp.data;
+                this.otherList = data.otherList;
+            }
+        }).catch (error => {
+            
+        });
+    },
+    data () {
         return {
-            otherList: [{
-                text: "M码通道",
-                a_href: "http://mformy.mall.meizu.com"
-            }, {
-                text: "手机号查询订单",
-                a_href: "//ordercenter.mall.meizu.com/mall/order/phone/init.html"
-            }, {
-                text: "以旧换新",
-                a_href: "//mcycle.mall.meizu.com/repo/m/my-mcycle"
-            }, {
-                text: "百城速达",
-                a_href: "//mall.meizu.com/marrive/summary/index.html"
-            }, {
-                text: "联系客服",
-                a_href: "//me.m.meizu.com/home/contact/index"
-            }, {
-                text: "意见反馈",
-                a_href: "//me.m.meizu.com/home/suggest/index"
-            }]
+            otherList: []
         }
     }
 }
 </script>
 
 <style lang="less" scoped>
-    .my-other {
-        margin-top: 2vw;
-        background: #FFF;
+.my-other {
+    margin-top: 2vw;
+    background: #FFF;
 
-        a {
-            padding: 0 5vw;
-            color: #333;
-            display: flex;
-            justify-content: space-between;
-            font-size: 4vw;
-            line-height: 3.5em;
+    a {
+        padding: 0 5vw;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        font-size: 4vw;
+        line-height: 3.5em;
 
-            &:nth-child(n + 2) {
-                border-top: 1px solid #E5E5E5;
-            }
+        &:nth-child(n + 2) {
+            border-top: 1px solid #E5E5E5;
+        }
 
-            .icon {
-                color: #CCC;
-                height: 3.5em;
-            }
+        .icon {
+            color: #CCC;
+            height: 3.5em;
         }
     }
+}
 </style>

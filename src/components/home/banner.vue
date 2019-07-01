@@ -13,46 +13,46 @@
 
 <script>
 export default {
-    data() {
+    beforeMount () {
+        this.$axios({
+            url: '../../../static/data/home/banner.json',
+            method: 'get'
+        }).then(resp => {
+            if (resp.status === 200) {
+                var data = resp.data;
+                this.rowList = data.rowList;
+            }
+        }).catch (error => {
+            
+        });
+    },
+    data () {
         return {
-            rowList: [{
-                bannerList: [{
-                    a_href: "https://detail.mall.meizu.com/item/meizu16s.html",
-                    img_src: "https://fms.res.meizu.com/dms/2019/04/23/1234c65f-7f81-45e3-9c65-f06a92954ab8.png"
-                }]
-            }, {
-                bannerList: [{
-                    a_href: "https://detail.meizu.com/item/meizu16x.html",
-                    img_src: "https://fms.res.meizu.com/dms/2019/04/04/bf934395-92a3-412a-9124-13dd13bd9635.png"
-                }, {
-                    a_href: "https://detail.meizu.com/item/meizu_ep52_lite.html",
-                    img_src: "https://fms.res.meizu.com/dms/2019/04/19/94510dd6-fe6e-45fd-a548-21fc4f7bac7b.jpg"
-                }]
-            }]
-        };
+            rowList: []
+        }
     }
 }
 </script>
 
 <style lang="less" scoped>
-    .index-banner {
-        display: flex;
+.index-banner {
+    display: flex;
 
-        .row {
-            width: 50%;
+    .row {
+        width: 50%;
 
-            .banner-lg {
-                width: 100%;
+        .banner-lg {
+            width: 100%;
 
-                a {
+            a {
+                display: block;
+
+                img {
+                    width: 100%;
                     display: block;
-
-                    img {
-                        width: 100%;
-                        display: block;
-                    }
                 }
             }
         }
     }
+}
 </style>

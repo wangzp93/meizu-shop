@@ -15,36 +15,30 @@
 
 <script>
 export default {
-    data() {
+    beforeMount () {
+        this.$axios({
+            url: '../../../static/data/home/h-footer.json',
+            method: 'get'
+        }).then(resp => {
+            if (resp.status === 200) {
+                var data = resp.data;
+                this.footerData = data.footerData;
+            }
+        }).catch (error => {
+            
+        });
+    },
+    data () {
         return {
             // 底部
-            footerData: {
-                text: "返回顶部",
-                contactList: [{
-                    a_href: "tel:400-788-3333",
-                    text: "400-788-3333"
-                }, {
-                    a_href: "http://url.meizu.com/ols_M",
-                    text: "在线客服"
-                }],
-                recordList: [{
-                    a_href: "http://www.miitbeian.gov.cn/",
-                    text: "粤ICP备13003602号-2"
-                }, {
-                    a_href: "https://www3.res.meizu.com/static/cn/_partial/footer/images/icp2_fb8db74.jpg",
-                    text: "合字B2-20170010"
-                }, {
-                    a_href: "http://www2.res.meizu.com/zh_cn/images/common/com_licence.jpg",
-                    text: "营业执照©2018 Meizu All rights reserved"
-                }]
-            }
-        };
+            footerData: {}
+        }
     },
     methods: {
         // 返回顶部
-        toTheTop() {
+        toTheTop () {
             var el = document.getElementsByClassName("main-router-view")[0];
-            var timer = setInterval(function() {
+            var timer = setInterval(function () {
                 var scrollY = el.scrollTop;
                 if (scrollY <= 0) {
                     clearInterval(timer);
@@ -57,55 +51,55 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    /* 底部 */
-    footer.main-footer {
+/* 底部 */
+footer.main-footer {
 
-        /* 返回顶部 */
-        .back-to-top {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 17.22222vw;
-            background: #f4f4f4;
-            cursor: pointer;
+    /* 返回顶部 */
+    .back-to-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 17.22222vw;
+        background: #f4f4f4;
+        cursor: pointer;
 
-            span {
-                display: inline-block;
-                color: #999;
-                font-size: 4.16667vw;
-            }
-        }
-
-        /* 联系方式 */
-        .footer-contact {
-            background: #fff;
-            display: flex;
-            padding: 6.01852vw 3vw 0;
-
-            a {
-                height: 9.72222vw;
-                line-height: 9.72222vw;
-                font-size: 4.25926vw;
-                text-align: center;
-                border-radius: 5vw;
-                margin: 0 2vw;
-                flex: 1;
-                overflow: hidden;
-                background: #00b4ff;
-                color: #fff;
-            }
-        }
-
-        /* 备案信息 */
-        .footer-record {
-            background: #fff;
-            padding: 5vw;
-            font-size: 2.26852vw;
-            line-height: 1.6;
-
-            a {
-                color: #999;
-            }
+        span {
+            display: inline-block;
+            color: #999;
+            font-size: 4.16667vw;
         }
     }
+
+    /* 联系方式 */
+    .footer-contact {
+        background: #fff;
+        display: flex;
+        padding: 6.01852vw 3vw 0;
+
+        a {
+            height: 9.72222vw;
+            line-height: 9.72222vw;
+            font-size: 4.25926vw;
+            text-align: center;
+            border-radius: 5vw;
+            margin: 0 2vw;
+            flex: 1;
+            overflow: hidden;
+            background: #00b4ff;
+            color: #fff;
+        }
+    }
+
+    /* 备案信息 */
+    .footer-record {
+        background: #fff;
+        padding: 5vw;
+        font-size: 2.26852vw;
+        line-height: 1.6;
+
+        a {
+            color: #999;
+        }
+    }
+}
 </style>

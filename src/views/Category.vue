@@ -14,49 +14,49 @@
 
 <script>
 export default {
-    data() {
+    data () {
         return {
-            navList: [],
-        };
+            navList: []
+        }
     }
 }
 </script>
 
 <style lang="less" scoped>
-    // 导航栏
-    .category {
-        .category-nav {
-            width: 12vw;
-            float: left;
+// 导航栏
+.category {
+    .category-nav {
+        width: 12vw;
+        float: left;
 
-            a {
-                display: block;
-                color: #000;
-                font-size: 2.5vw;
-                padding: 2vw 0;
-                text-align: center;
+        a {
+            display: block;
+            color: #000;
+            font-size: 2.5vw;
+            padding: 2vw 0;
+            text-align: center;
+
+            span {
+                float: left;
+                width: 0.3em;
+                height: 1.3em;
+                vertical-align: middle;
+            }
+
+            &.router-link-active {
+                color: #007aff;
 
                 span {
-                    float: left;
-                    width: 0.3em;
-                    height: 1.3em;
-                    vertical-align: middle;
-                }
-
-                &.router-link-active {
-                    color: #007aff;
-
-                    span {
-                        background: #007aff;
-                    }
+                    background: #007aff;
                 }
             }
         }
-
-        .category-content {
-            margin-left: 12vw;
-            min-height: 88.5vh;
-            border-left: 1px solid #ccc;
-        }
     }
+
+    .category-content {
+        margin-left: 12vw;
+        min-height: 88.5vh;
+        border-left: 1px solid #ccc;
+    }
+}
 </style>

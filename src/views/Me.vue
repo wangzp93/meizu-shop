@@ -14,11 +14,6 @@ import MyItem from '../components/me/my-item'
 import MyOther from '../components/me/my-other'
 
 export default {
-    data() {
-        return {
-
-        }
-    },
     components: {
         MyInfo,
         MyOrder,
@@ -29,7 +24,7 @@ export default {
 </script>
 
 <style scoped>
-    .me-index {
-        background: #EEE;
-    }
+.me-index {
+    background: #EEE;
+}
 </style>

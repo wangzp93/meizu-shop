@@ -20,73 +20,70 @@
 
 <script>
 export default {
-    data() {
+    beforeMount () {
+        this.$axios({
+            url: '../../../static/data/me/my-order.json',
+            method: 'get'
+        }).then(resp => {
+            if (resp.status === 200) {
+                var data = resp.data;
+                this.statusList = data.statusList;
+            }
+        }).catch (error => {
+            
+        });
+    },
+    data () {
         return {
-            statusList: [{
-                enName: "payment",
-                chName: "待付款",
-                a_href: "//ordercenter.mall.meizu.com/mall/order/init.html?type=unpay"
-            }, {
-                enName: "wait-deliver",
-                chName: "待发货",
-                a_href: "//ordercenter.mall.meizu.com/mall/order/init.html?type=paid"
-            }, {
-                enName: "logistics",
-                chName: "待收货",
-                a_href: "//ordercenter.mall.meizu.com/mall/order/init.html?type=onroad"
-            }, {
-                enName: "after-sale",
-                chName: "退款/售后",
-                a_href: "//ordercenter.mall.meizu.com/mall/order/init.html?type=service"
-            }]
+            statusList: []
         }
     }
 }
 </script>
 
 <style lang="less" scoped>
-    .myorders {
-        margin-top: 2vw;
-        background: #FFF;
+.myorders {
+    margin-top: 2vw;
+    background: #FFF;
 
-        // 我的订单
-        .top {
-            display: flex;
-            justify-content: space-between;
-            padding: 3vw 5vw;
+    // 我的订单
+    .top {
+        display: flex;
+        justify-content: space-between;
+        padding: 3vw 5vw;
 
-            span {
-                color: #444;
-                font-size: 4.5vw;
-            }
-
-            a {
-                font-size: 3.5vw;
-                color: #999;
-            }
+        span {
+            color: #444;
+            font-size: 4.5vw;
         }
 
-        // 待付款、待收货等
-        .order-status {
-            border-top: 1px solid #e5e5e5;
-            padding: 3vw 0;
-            display: flex;
-            justify-content: space-between;
+        a {
+            font-size: 3.5vw;
+            color: #999;
+        }
+    }
 
-            a {
-                width: 25%;
-                color: #999;
-                text-align: center;
-                font-size: 3.5vw;
+    // 待付款、待收货等
+    .order-status {
+        border-top: 1px solid #e5e5e5;
+        padding: 3vw 0;
+        display: flex;
+        justify-content: space-between;
 
-                &:nth-child(n + 2) {
-                    border-left: 1px solid #ddd;
-                }
+        a {
+            width: 25%;
+            color: #999;
+            text-align: center;
+            font-size: 3.5vw;
 
-                .icon {
-                    font-size: 2em;
-                }
+            &:nth-child(n + 2) {
+                border-left: 1px solid #ddd;
+            }
+
+            .icon {
+                font-size: 2em;
             }
         }
     }
+}
 </style>

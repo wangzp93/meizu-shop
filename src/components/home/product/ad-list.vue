@@ -20,7 +20,7 @@
 export default {
     props: {
         adList: {
-            type: [Array],
+            type: Array,
             default: []
         }
     }
@@ -28,81 +28,81 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    /* 广告图片 */
-    .list-ad {
-        .accessoary-ad {
-            a {
-                display: block;
+/* 广告图片 */
+.list-ad {
+    .accessoary-ad {
+        a {
+            display: block;
 
-                img {
-                    width: 50%;
-                    display: block;
-                }
-            }
-
-            /* 广告描述 */
-            .accessoary-ad-detail {
-                position: relative;
+            img {
                 width: 50%;
-                height: 38vw;
-                line-height: 6vw;
-                padding: 3.88889vw;
-                box-sizing: border-box;
+                display: block;
+            }
+        }
 
-                .ad-name {
-                    font-size: 4.62963vw;
-                    font-weight: 400;
-                    color: #fff;
-                    width: 33.33333vw;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2;
-                    overflow: hidden;
-                }
+        /* 广告描述 */
+        .accessoary-ad-detail {
+            position: relative;
+            width: 50%;
+            height: 38vw;
+            line-height: 6vw;
+            padding: 3.88889vw;
+            box-sizing: border-box;
 
-                .ad-feature {
-                    font-size: 3.33333vw;
-                    color: hsla(0, 0%, 100%, .7);
-                    position: relative;
-                    line-height: 1.2;
-                    padding: 1.2vw 0;
+            .ad-name {
+                font-size: 4.62963vw;
+                font-weight: 400;
+                color: #fff;
+                width: 33.33333vw;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
 
-                    &:after {
-                        position: absolute;
-                        content: "";
-                        width: 5vw;
-                        height: .5vw;
-                        background: #fff;
-                        left: 0;
-                        bottom: -1.5vw;
-                    }
-                }
+            .ad-feature {
+                font-size: 3.33333vw;
+                color: hsla(0, 0%, 100%, .7);
+                position: relative;
+                line-height: 1.2;
+                padding: 1.2vw 0;
 
-                .ad-price {
+                &:after {
                     position: absolute;
-                    left: 3.88889vw;
-                    bottom: 3vw;
-                    // margin-top: 6vw;
-                    color: hsla(0, 0%, 100%, .7);
-                    font-size: 4.62963vw;
-
-                    i {
-                        font-style: normal;
-                    }
+                    content: "";
+                    width: 5vw;
+                    height: .5vw;
+                    background: #fff;
+                    left: 0;
+                    bottom: -1.5vw;
                 }
             }
 
-            &:nth-child(odd) {
-                .accessoary-ad-detail {
-                    float: right;
-                }
-            }
+            .ad-price {
+                position: absolute;
+                left: 3.88889vw;
+                bottom: 3vw;
+                // margin-top: 6vw;
+                color: hsla(0, 0%, 100%, .7);
+                font-size: 4.62963vw;
 
-            &:nth-child(even) {
-                .accessoary-ad-detail {
-                    float: left;
+                i {
+                    font-style: normal;
                 }
             }
         }
+
+        &:nth-child(odd) {
+            .accessoary-ad-detail {
+                float: right;
+            }
+        }
+
+        &:nth-child(even) {
+            .accessoary-ad-detail {
+                float: left;
+            }
+        }
     }
+}
 </style>

@@ -20,12 +20,16 @@ import {
 } from 'vue-awesome-swiper'
 
 export default {
-    beforeMount() {
+    components: {
+        swiper,
+        swiperSlide
+    },
+    beforeMount () {
         this.$axios({
-            method: "get",
-            url: "../../../static/data/home/swiper.json"
+            method: 'get',
+            url: '../../../static/data/home/swiper.json'
         }).then(resp => {
-            if (resp.status == 200) {
+            if (resp.status === 200) {
                 var data = resp.data;
                 this.name = data.name;
                 this.bannerList = data.bannerList;
@@ -34,7 +38,7 @@ export default {
 
         });
     },
-    data() {
+    data () {
         return {
             swiperOption: {
                 pagination: {
@@ -45,30 +49,26 @@ export default {
                 loop: true
             },
             bannerList: []
-        };
-    },
-    components: {
-        swiper,
-        swiperSlide
+        }
     }
 }
 </script>
 
 <style>
-    /* 轮播图 图片 */
-    .swiper-container .banner-wrapper-img {
-        display: block;
-        width: 100%;
-    }
+/* 轮播图 图片 */
+.swiper-container .banner-wrapper-img {
+    display: block;
+    width: 100%;
+}
 
-    /* 轮播图 页码 */
-    .swiper-container .swiper-pagination-bullet {
-        background-color: #FFF;
-        opacity: 0.5;
-    }
+/* 轮播图 页码 */
+.swiper-container .swiper-pagination-bullet {
+    background-color: #FFF;
+    opacity: 0.5;
+}
 
-    /* 当前显示的 */
-    .swiper-container .swiper-pagination-bullet-active {
-        opacity: 1;
-    }
+/* 当前显示的 */
+.swiper-container .swiper-pagination-bullet-active {
+    opacity: 1;
+}
 </style>

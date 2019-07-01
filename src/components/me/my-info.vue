@@ -18,14 +18,28 @@
 
 <script>
 export default {
-    data() {
+    beforeMount () {
+        this.$axios({
+            url: '../../../static/data/me/my-info.json',
+            method: 'get'
+        }).then(resp => {
+            if (resp.status === 200) {
+                var data = resp.data;
+                this.img_src = data.img_src;
+                this.myName = data.myName;
+            }
+        }).catch (error => {
+            
+        });
+    },
+    data () {
         return {
-            img_src: "//image-res.mzres.com/img/download/uc/17/47/28/26/00/17472826/w200h200?t=1533114361000",
-            myName: "用户69891304"
+            img_src: "",
+            myName: ""
         }
     },
     methods: {
-        back() {
+        back () {
             // window.history.back();
             this.$router.go(-1);
         }
@@ -34,47 +48,47 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    .my-info {
-        background: linear-gradient(rgb(0, 187, 232), rgb(0, 146, 221));
-        padding: 5vw;
+.my-info {
+    background: linear-gradient(rgb(0, 187, 232), rgb(0, 146, 221));
+    padding: 5vw;
 
-        // 功能按钮
-        .icon-back {
-            float: left;
-        }
+    // 功能按钮
+    .icon-back {
+        float: left;
+    }
 
-        .icon-msg {
-            float: right;
-        }
+    .icon-msg {
+        float: right;
+    }
 
-        .icon {
-            color: #FFF;
-            font-size: 5vw;
-            cursor: pointer;
-        }
+    .icon {
+        color: #FFF;
+        font-size: 5vw;
+        cursor: pointer;
+    }
 
-        // 头像
-        .my-icon {
-            width: 21vw;
-            height: 21vw;
-            margin: 0 auto;
-            background: #FFF;
+    // 头像
+    .my-icon {
+        width: 21vw;
+        height: 21vw;
+        margin: 0 auto;
+        background: #FFF;
+        border-radius: 50%;
+        padding: 0.8vw;
+
+        img {
+            width: 100%;
             border-radius: 50%;
-            padding: 0.8vw;
-
-            img {
-                width: 100%;
-                border-radius: 50%;
-            }
-        }
-
-        // 昵称
-        .my-name {
-            text-align: center;
-            color: #FFF;
-            font-weight: 500;
-            font-size: 4vw;
-            margin-top: 2vw;
         }
     }
+
+    // 昵称
+    .my-name {
+        text-align: center;
+        color: #FFF;
+        font-weight: 500;
+        font-size: 4vw;
+        margin-top: 2vw;
+    }
+}
 </style>

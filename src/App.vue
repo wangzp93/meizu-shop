@@ -5,10 +5,10 @@
         </div>
         <nav class="main-router">
             <!-- <router-link :to="{name: 'homeLink'}" tag="a">
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#icon-home"></use>
-				</svg><br>首页
-			</router-link> -->
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-home"></use>
+                </svg><br>首页
+            </router-link> -->
             <router-link v-for="(router, index) in routerList" :key="index" :to="formatRouterLink(router.eng_name)" tag="a">
                 <svg-icon :iconName="router.eng_name"></svg-icon><br>
                 <span>{{ router.text }}</span>
