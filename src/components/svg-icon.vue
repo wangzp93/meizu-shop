@@ -15,7 +15,7 @@ export default {
     },
     methods: {
         formatSvgHref () {
-            return "#icon-" + this.iconName;
+            return '#icon-' + this.iconName
         }
     }
 }

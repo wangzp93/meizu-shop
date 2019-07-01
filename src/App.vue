@@ -42,18 +42,18 @@ export default {
                 eng_name: 'me',
                 text: '我的'
             }]
-        }
+        };
     },
     methods: {
         // 格式化路由地址
         formatRouterLink (engName) {
             return {
                 name: engName + 'Link'
-            }
+            };
         },
         // 格式化svg图标地址
         formatSvgHref (engName) {
-            return '#icon-' + engName
+            return '#icon-' + engName;
         }
     }
 }

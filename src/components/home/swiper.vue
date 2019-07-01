@@ -34,8 +34,8 @@ export default {
                 this.name = data.name;
                 this.bannerList = data.bannerList;
             }
-        }).catch(error => {
-
+        }).catch( error => {
+            
         });
     },
     data () {

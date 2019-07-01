@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App.vue'
 
 //路由
-// import VueRouter from 'vue-router'
 import router from './router'
 
 // axios
@@ -17,7 +16,7 @@ Vue.config.productionTip = false
 
 // 阿里矢量图标
 import SvgIcon from './components/svg-icon'
-Vue.component("svg-icon", SvgIcon);
+Vue.component("svg-icon", SvgIcon)
 
 /* eslint-disable no-new */
 new Vue({

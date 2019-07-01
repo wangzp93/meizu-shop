@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     // 缩进改为4空格
     'indent': ['error', 4],
+    'semi': ["error", "always"],
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development

@@ -34,7 +34,7 @@ export default {
                 this.ad = data.ad;
                 this.list = data.list;
             }
-        }).catch (error => {
+        }).catch( error => {
             
         });
     },
@@ -43,7 +43,7 @@ export default {
             title: "",
             ad: [],
             list: []
-        }
+        };
     }
 }
 </script>

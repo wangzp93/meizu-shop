@@ -1,10 +1,10 @@
 <template>
     <div class="category">
         <nav class="category-nav">
-            <router-link key="1" to="/category/phone" tag="a"><span></span>手机</router-link>
-            <router-link key="2" to="/category/audio" tag="a"><span></span>声学</router-link>
-            <router-link key="3" to="/category/section" tag="a"><span></span>配件</router-link>
-            <router-link key="4" to="/category/surround" tag="a"><span></span>周边</router-link>
+            <router-link key="1" to="/category/phone"><span></span>手机</router-link>
+            <router-link key="2" to="/category/audio"><span></span>声学</router-link>
+            <router-link key="3" to="/category/section"><span></span>配件</router-link>
+            <router-link key="4" to="/category/surround"><span></span>周边</router-link>
         </nav>
         <div class="category-content">
             <router-view></router-view>

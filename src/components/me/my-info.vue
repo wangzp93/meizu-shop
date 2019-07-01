@@ -28,7 +28,7 @@ export default {
                 this.img_src = data.img_src;
                 this.myName = data.myName;
             }
-        }).catch (error => {
+        }).catch( error => {
             
         });
     },
