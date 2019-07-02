@@ -10,8 +10,6 @@ import router from './router'
 import axios from 'axios'
 Vue.prototype.$axios = axios
 
-// Vue.use(VueRouter);
-
 Vue.config.productionTip = false
 
 // 阿里矢量图标
