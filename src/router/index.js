@@ -20,7 +20,7 @@ export default new Router({
     // mode: "history",
     routes: [
         {path: "/home", component: Home, name: "homeLink" },
-        {path: "/category", component: Category, redirect: "/category/phone", name: "categoryLink",
+        {path: "/category", component: Category,/* redirect: "/category/phone", */ name: "categoryLink",
             children: [
                 {path: "/category/phone", component: Phone, name: "phoneLink"},
                 {path: "/category/audio", component: Audio, name: "audioLink"},

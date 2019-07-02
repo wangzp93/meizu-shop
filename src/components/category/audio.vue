@@ -25,8 +25,9 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '../../../static/data/category/audio.json',
-            method: 'get'
+            // url: '../../../static/data/category/audio.json',
+            url: 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop/category/audio.json',
+            method: 'post'
         }).then(resp => {
             if (resp.status === 200) {
                 var data = resp.data;
