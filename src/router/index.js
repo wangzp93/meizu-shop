@@ -17,7 +17,7 @@ import Section from '../components/category/section'
 import Surround from '../components/category/surround'
 
 export default new Router({
-    mode: "history",
+    // mode: "history",
     routes: [
         {path: "/home", component: Home, name: "homeLink" },
         {path: "/category", component: Category, redirect: "/category/phone", name: "categoryLink",
