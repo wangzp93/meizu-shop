@@ -27,8 +27,8 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '../../../static/data/category/phone.json',
-            method: 'get'
+            url: this.$store.state.baseUrl + 'category/phone',
+            method: 'post'
         }).then(resp => {
             if (resp.status === 200) {
                 var data = resp.data;

@@ -25,8 +25,7 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            // url: '../../../static/data/category/audio.json',
-            url: 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop/category/audio.json',
+            url: this.$store.state.baseUrl + 'category/audio',
             method: 'post'
         }).then(resp => {
             if (resp.status === 200) {
@@ -36,7 +35,7 @@ export default {
                 this.list = data.list;
             }
         }).catch(error => {
-            
+
         });
     },
     data () {

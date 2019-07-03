@@ -5,8 +5,10 @@ import App from './App.vue'
 // axios
 import axios from 'axios'
 
-//路由
+// 路由
 import router from './router'
+
+import {store} from './store'
 
 Vue.prototype.$axios = axios
 
@@ -20,6 +22,7 @@ Vue.component("svg-icon", SvgIcon)
 new Vue({
     el: '#app',
     router,
+    store,
     components: {
         App
     },

@@ -26,8 +26,8 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            method: 'get',
-            url: '../../../static/data/home/swiper.json'
+            url: this.$store.state.baseUrl + 'home/swiper',
+            method: 'post',
         }).then(resp => {
             if (resp.status === 200) {
                 var data = resp.data;

@@ -11,8 +11,8 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '../../../static/data/me/my-other.json',
-            method: 'get'
+            url: this.$store.state.baseUrl + 'me/my-other',
+            method: 'post'
         }).then(resp => {
             if (resp.status === 200) {
                 var data = resp.data;
