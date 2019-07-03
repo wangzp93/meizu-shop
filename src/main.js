@@ -2,12 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App.vue'
+// axios
+import axios from 'axios'
 
 //路由
 import router from './router'
 
-// axios
-import axios from 'axios'
 Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
