@@ -5,7 +5,8 @@
             <router-link key="2" to="/category/audio"><span></span>声学</router-link>
             <router-link key="3" to="/category/section"><span></span>配件</router-link>
             <router-link key="4" to="/category/surround"><span></span>周边</router-link> -->
-            <router-link v-for="(nav, index) in navList" :to="formatLink(nav.enName)" :key="index">
+            <router-link v-for="(nav, index) in navList" :key="index"
+                :to="formatLink(nav.enName)">
                 <span></span>{{ nav.chName }}
             </router-link>
         </nav>

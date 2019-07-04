@@ -1,6 +1,6 @@
 <!-- 轮播图 -->
 <template>
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="bannerList.length > 0">
         <swiper-slide v-for="(banner, index) in bannerList" :key="index">
             <a :href="banner.a_href">
                 <img :src="banner.img_src" class="banner-wrapper-img">

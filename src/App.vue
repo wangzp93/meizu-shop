@@ -9,7 +9,8 @@
                     <use xlink:href="#icon-home"></use>
                 </svg><br>首页
             </router-link> -->
-            <router-link v-for="(router, index) in routerList" :key="index" :to="formatRouterLink(router.eng_name)" tag="a">
+            <router-link v-for="(router, index) in routerList" :key="index" 
+                :to="formatRouterLink(router.eng_name)">
                 <svg-icon :iconName="router.eng_name"></svg-icon><br>
                 <span>{{ router.text }}</span>
             </router-link>
