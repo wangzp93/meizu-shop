@@ -25,7 +25,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: this.$store.state.baseUrl + 'home/hotSite',
+            url: '/home/hotSite',
             method: 'post'
         }).then(resp => {
             if (resp.status == 200) {

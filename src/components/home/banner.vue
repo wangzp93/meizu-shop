@@ -15,8 +15,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '../../../static/data/home/banner.json',
-            url: this.$store.state.baseUrl + 'home/banner',
+            url: '/home/banner',
             method: 'post'
         }).then(resp => {
             if (resp.status === 200) {

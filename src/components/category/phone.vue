@@ -27,7 +27,7 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: this.$store.state.baseUrl + 'category/phone',
+            url: '/category/phone',
             method: 'post'
         }).then(resp => {
             if (resp.status === 200) {

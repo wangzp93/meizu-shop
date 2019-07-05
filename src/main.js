@@ -10,6 +10,7 @@ import router from './router'
 
 import {store} from './store'
 
+axios.defaults.baseURL = 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop'
 Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false

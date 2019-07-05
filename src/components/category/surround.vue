@@ -25,7 +25,7 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: this.$store.state.baseUrl + 'category/surround',
+            url: '/category/surround',
             method: 'post'
         }).then(resp => {
             if (resp.status === 200) {
