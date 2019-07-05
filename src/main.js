@@ -2,16 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App.vue'
-// axios
-import axios from 'axios'
 
 // 路由
 import router from './router'
 
-import {store} from './store'
+import {axios} from './axios'
 
-axios.defaults.baseURL = 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop'
-Vue.prototype.$axios = axios
+import {store} from './store'
 
 Vue.config.productionTip = false
 
