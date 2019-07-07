@@ -51,10 +51,6 @@ export default {
             return {
                 name: engName + 'Link'
             };
-        },
-        // 格式化svg图标地址
-        formatSvgHref (engName) {
-            return '#icon-' + engName;
         }
     }
 }

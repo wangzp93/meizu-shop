@@ -1,7 +1,7 @@
 <!-- 阿里矢量图标 Symbol用法 -->
 <template>
     <svg class="icon" aria-hidden="true">
-        <use :xlink:href="formatSvgHref()"></use>
+        <use :xlink:href="formatSvgHref"></use>
     </svg>
 </template>
 
@@ -13,11 +13,11 @@ export default {
             require: true
         }
     },
-    methods: {
-        formatSvgHref () {
+    computed: {
+        formatSvgHref() {
             return '#icon-' + this.iconName;
         }
-    }
+    },
 }
 </script>
 
