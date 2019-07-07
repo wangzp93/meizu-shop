@@ -62,7 +62,6 @@ export default {
     /* 广告背景颜色 */
     .list-ad {
         /deep/ .accessoary-ad {
-            background: blue;
 
             &:nth-child(odd) {
                 background: rgb(245, 92, 92);
