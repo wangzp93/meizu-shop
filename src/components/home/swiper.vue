@@ -31,7 +31,6 @@ export default {
         }).then(resp => {
             if (resp.status === 200) {
                 var data = resp.data;
-                this.name = data.name;
                 this.bannerList = data.bannerList;
             }
         }).catch( error => {
