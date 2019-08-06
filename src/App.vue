@@ -76,7 +76,7 @@ export default {
         position: fixed;
         bottom: 0;
         width: 100%;
-        font-size: 2.5vh;
+        // font-size: 2.5vh;
         background-color: #fff;
         z-index: 1000;
         padding: 1vh 0;
@@ -92,7 +92,7 @@ export default {
             }
 
             .icon {
-                font-size: 6vh;
+                font-size: 5vh;
             }
         }
     }
