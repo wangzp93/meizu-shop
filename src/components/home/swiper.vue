@@ -28,13 +28,8 @@ export default {
         this.$axios({
             url: '/home/swiper',
             method: 'post',
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.bannerList = data.bannerList;
-            }
-        }).catch( error => {
-            
+        }, (resp) => {
+            this.bannerList = resp.bannerList;
         });
     },
     data () {

@@ -27,14 +27,9 @@ export default {
         this.$axios({
             url: '/home/hotSite',
             method: 'post'
-        }).then(resp => {
-            if (resp.status == 200) {
-                var data = resp.data;
-                this.tipBarList = data.tipBarList;
-                this.hotSideList = data.hotSideList;
-            }
-        }).catch(error => {
-
+        }, (resp) => {
+            this.tipBarList = resp.tipBarList;
+            this.hotSideList = resp.hotSideList;
         });
     },
     data () {

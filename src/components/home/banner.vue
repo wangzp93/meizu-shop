@@ -17,13 +17,8 @@ export default {
         this.$axios({
             url: '/home/banner',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.rowList = data.rowList;
-            }
-        }).catch (error => {
-            
+        }, (resp) => {
+            this.rowList = resp.rowList;
         });
     },
     data () {

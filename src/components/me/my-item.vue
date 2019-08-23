@@ -13,13 +13,8 @@ export default {
         this.$axios({
             url: '/me/my-item',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.itemList = data.itemList;
-            }
-        }).catch (error => {
-            
+        }, (resp) => {
+            this.itemList = resp.itemList;
         });
     },
     data () {

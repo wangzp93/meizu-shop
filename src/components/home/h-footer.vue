@@ -19,13 +19,8 @@ export default {
         this.$axios({
             url: '/home/h-footer',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.footerData = data.footerData;
-            }
-        }).catch (error => {
-            
+        }, (resp) => {
+            this.footerData = resp.footerData;
         });
     },
     data () {

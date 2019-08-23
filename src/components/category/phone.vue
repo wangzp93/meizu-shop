@@ -29,15 +29,10 @@ export default {
         this.$axios({
             url: '/category/phone',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.title = data.title;
-                this.ad = data.ad;
-                this.list = data.list;
-            }
-        }).catch( error => {
-            
+        }, (resp) => {
+            this.title = resp.title;
+            this.ad = resp.ad;
+            this.list = resp.list;
         });
     },
     data () {

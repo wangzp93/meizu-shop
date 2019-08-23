@@ -22,14 +22,9 @@ export default {
         this.$axios({
             url: '/me/my-info',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.img_src = data.img_src;
-                this.myName = data.myName;
-            }
-        }).catch( error => {
-            
+        }, (resp) => {
+            this.img_src = resp.img_src;
+            this.myName = resp.myName;
         });
     },
     data () {
