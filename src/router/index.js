@@ -18,7 +18,7 @@ import Surround from '@/components/category/surround'
 
 export default new Router({
     mode: "history",
-    // bash: "/meizu-shop/",
+    base: "/meizu-shop/",
     routes: [
         {path: "/home", component: Home, name: "homeLink" },
         {path: "/category", component: Category, redirect: {name: 'phoneLink'}, name: "categoryLink",
