@@ -26,10 +26,11 @@ export default {
 
 <style lang="less" scoped>
 .cart {
-    min-height: 88.5vh;
     background: #EEE;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
-    // margin-bottom: -11.4vw;
     .title {
         line-height: 8.8vw;
         text-align: center;

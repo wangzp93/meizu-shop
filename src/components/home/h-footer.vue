@@ -19,13 +19,8 @@ export default {
         this.$axios({
             url: '/home/h-footer',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.footerData = data.footerData;
-            }
-        }).catch (error => {
-            
+        }, (resp) => {
+            this.footerData = resp.footerData;
         });
     },
     data () {
@@ -37,7 +32,8 @@ export default {
     methods: {
         // 返回顶部
         toTheTop () {
-            var el = document.getElementsByClassName("main-router-view")[0];
+            // var el = document.getElementsByClassName("main-router-view")[0];
+            var el = document.documentElement;
             var timer = setInterval(function () {
                 var scrollY = el.scrollTop;
                 if (scrollY <= 0) {

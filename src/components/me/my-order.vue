@@ -24,13 +24,8 @@ export default {
         this.$axios({
             url: '/me/my-order',
             method: 'post'
-        }).then(resp => {
-            if (resp.status === 200) {
-                var data = resp.data;
-                this.statusList = data.statusList;
-            }
-        }).catch (error => {
-            
+        }, (resp) => {
+            this.statusList = resp.statusList;
         });
     },
     data () {
