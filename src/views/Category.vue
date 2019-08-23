@@ -36,7 +36,7 @@ export default {
 // 导航栏
 .category {
     .category-nav {
-        width: 12vw;
+        width: 13vw;
         float: left;
 
         a {
@@ -64,7 +64,7 @@ export default {
     }
 
     .category-content {
-        margin-left: 12vw;
+        margin-left: 13vw;
         min-height: 88.5vh;
         border-left: 1px solid #ccc;
     }

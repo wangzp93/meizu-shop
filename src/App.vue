@@ -66,7 +66,12 @@ export default {
 
     #app {
         .main-router-view {
-            max-height: 88.5vh;
+            @marginBottom: 14vw;    // 底部预留的 导航栏高度
+            
+            position: absolute;
+            width: 100%;
+            height: calc(100% - @marginBottom);
+            margin-bottom: @marginBottom;
             overflow: auto;
         }
     }
@@ -76,10 +81,10 @@ export default {
         position: fixed;
         bottom: 0;
         width: 100%;
-        // font-size: 2.5vh;
+        font-size: 2.5vw;
         background-color: #fff;
         z-index: 1000;
-        padding: 1vh 0;
+        padding: 1vw 0;
         display: flex;
         justify-content: space-around;
 
@@ -92,7 +97,7 @@ export default {
             }
 
             .icon {
-                font-size: 5vh;
+                font-size: 8vw;
             }
         }
     }
