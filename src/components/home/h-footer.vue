@@ -32,8 +32,7 @@ export default {
     methods: {
         // 返回顶部
         toTheTop () {
-            // var el = document.getElementsByClassName("main-router-view")[0];
-            var el = document.documentElement;
+            var el = document.getElementsByClassName("main-router-view")[0];
             var timer = setInterval(function () {
                 var scrollY = el.scrollTop;
                 if (scrollY <= 0) {
