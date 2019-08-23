@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from '@/App.vue'
-
+// wzp
 // 路由
 import router from '@/router'
 
