@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import Phone from '../category/phone.vue'
-import AudioP from '../category/audio.vue'
-import SectionP from '../category/section.vue'
-import Surround from '../category/surround.vue'
+import Phone from '@/components/category/phone.vue'
+import AudioP from '@/components/category/audio.vue'
+import SectionP from '@/components/category/section.vue'
+import Surround from '@/components/category/surround.vue'
 
 export default {
     components: {

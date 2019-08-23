@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import Swiper from '../components/home/swiper'
-import HotSite from '../components/home/hotSite'
-import Banner from '../components/home/banner'
-import Product from '../components/home/product'
-import HFooter from '../components/home/h-footer'
+import Swiper from '@/components/home/swiper'
+import HotSite from '@/components/home/hotSite'
+import Banner from '@/components/home/banner'
+import Product from '@/components/home/product'
+import HFooter from '@/components/home/h-footer'
 
 export default {
     components: {

@@ -54,7 +54,7 @@ export default {
         margin-top: -10vw;
 
         p {
-            font-size: 2vw;
+            font-size: 3.5vw;
             color: #666;
             margin: 0 0 8vw 0;
         }

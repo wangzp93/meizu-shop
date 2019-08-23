@@ -42,7 +42,7 @@ export default {
         a {
             display: block;
             color: #000;
-            font-size: 2.5vw;
+            font-size: 4vw;
             padding: 2vw 0;
             text-align: center;
 

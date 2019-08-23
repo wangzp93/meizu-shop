@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import MyInfo from '../components/me/my-info'
-import MyOrder from '../components/me/my-order'
-import MyItem from '../components/me/my-item'
-import MyOther from '../components/me/my-other'
+import MyInfo from '@/components/me/my-info'
+import MyOrder from '@/components/me/my-order'
+import MyItem from '@/components/me/my-item'
+import MyOther from '@/components/me/my-other'
 
 export default {
     components: {

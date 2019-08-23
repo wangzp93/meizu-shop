@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import ProductTitle from '../home/product/product-title.vue'
-import ProductList from '../home/product/product-list.vue'
-import AdList from '../home/product/ad-list.vue'
+import ProductTitle from '@/components/home/product/product-title.vue'
+import ProductList from '@/components/home/product/product-list.vue'
+import AdList from '@/components/home/product/ad-list.vue'
 
 export default {
     components: {
