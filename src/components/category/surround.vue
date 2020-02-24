@@ -25,9 +25,8 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '/category/surround',
-            method: 'post'
-        }, (resp) => {
+            url: 'category/surround'
+        }).then((resp) => {
             this.title = resp.title;
             this.ad = resp.ad;
             this.list = resp.list;

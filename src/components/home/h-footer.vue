@@ -17,9 +17,8 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '/home/h-footer',
-            method: 'post'
-        }, (resp) => {
+            url: 'home/h-footer'
+        }).then((resp) => {
             this.footerData = resp.footerData;
         });
     },

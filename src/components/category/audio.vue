@@ -25,9 +25,8 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '/category/audio',
-            method: 'post'
-        }, (resp) => {
+            url: 'category/audio'
+        }).then((resp) => {
             this.title = resp.title;
             this.ad = resp.ad;
             this.list = resp.list;

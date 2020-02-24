@@ -26,9 +26,8 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '/home/swiper',
-            method: 'post',
-        }, (resp) => {
+            url: 'home/swiper'
+        }).then((resp) => {
             this.bannerList = resp.bannerList;
         });
     },

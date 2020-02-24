@@ -11,9 +11,8 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '/me/my-other',
-            method: 'post'
-        }, (resp) => {
+            url: 'me/my-other'
+        }).then((resp) => {
             this.otherList = resp.otherList;
         });
     },

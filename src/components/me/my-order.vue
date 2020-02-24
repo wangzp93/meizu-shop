@@ -22,9 +22,8 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '/me/my-order',
-            method: 'post'
-        }, (resp) => {
+            url: 'me/my-order'
+        }).then((resp) => {
             this.statusList = resp.statusList;
         });
     },

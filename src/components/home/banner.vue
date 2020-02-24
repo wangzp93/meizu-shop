@@ -15,9 +15,8 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '/home/banner',
-            method: 'post'
-        }, (resp) => {
+            url: 'home/banner'
+        }).then((resp) => {
             this.rowList = resp.rowList;
         });
     },
