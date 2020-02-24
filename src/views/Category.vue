@@ -1,21 +1,36 @@
 <template>
     <div class="category">
         <nav class="category-nav">
-            <router-link v-for="(nav, index) in navList" :key="index"
-                :to="formatLink(nav.enName)">
+            <div v-for="(nav, index) in navList" :key="index" :class="{active: nav.enName == tabId}"
+                @click="changeTab(nav.enName)">
                 <span></span>{{ nav.chName }}
-            </router-link>
+            </div>
         </nav>
         <div class="category-content">
-            <router-view></router-view>
+            <phone v-if="tabId == 'phone'"></phone>
+            <audio-p v-else-if="tabId == 'audio'"></audio-p>
+            <section-p v-else-if="tabId == 'section'"></section-p>
+            <surround v-else-if="tabId == 'surround'"></surround>
         </div>
     </div>
 </template>
 
 <script>
+import Phone from '@/components/category/phone.vue'
+import AudioP from '@/components/category/audio.vue'
+import SectionP from '@/components/category/section.vue'
+import Surround from '@/components/category/surround.vue'
+
 export default {
+    components: {
+        Phone,
+        AudioP,
+        SectionP,
+        Surround
+    },
     data () {
         return {
+            tabId: 'phone',
             navList: [
                 {enName: 'phone', chName: '手机'},
                 {enName: 'audio', chName: '声学'},
@@ -25,8 +40,8 @@ export default {
         };
     },
     methods: {
-        formatLink (enName) {
-            return '/category/' + enName;
+        changeTab(enName) {
+            this.tabId = enName;
         }
     }
 }
@@ -39,12 +54,13 @@ export default {
         width: 13vw;
         float: left;
 
-        a {
+        div {
             display: block;
             color: #000;
             font-size: 4vw;
             padding: 2vw 0;
             text-align: center;
+            cursor: pointer;
 
             span {
                 float: left;
@@ -53,7 +69,7 @@ export default {
                 vertical-align: middle;
             }
 
-            &.router-link-active {
+            &.active {
                 color: #007aff;
 
                 span {

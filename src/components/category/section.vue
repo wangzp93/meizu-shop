@@ -25,12 +25,21 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '/category/section',
-            method: 'post'
-        }, (resp) => {
+            url: 'category/section'
+        }).then((resp) => {
             this.title = resp.title;
             this.ad = resp.ad;
             this.list = resp.list;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/category/section.json',
+                method: 'get'
+            }).then((resp) => {
+                this.title = resp.title;
+                this.ad = resp.ad;
+                this.list = resp.list;
+            });
         });
     },
     data () {

@@ -27,12 +27,21 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '/category/phone',
-            method: 'post'
-        }, (resp) => {
+            url: 'category/phone'
+        }).then((resp) => {
             this.title = resp.title;
             this.ad = resp.ad;
             this.list = resp.list;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/category/phone.json',
+                method: 'get'
+            }).then((resp) => {
+                this.title = resp.title;
+                this.ad = resp.ad;
+                this.list = resp.list;
+            });
         });
     },
     data () {

@@ -26,10 +26,17 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: '/home/swiper',
-            method: 'post',
-        }, (resp) => {
+            url: 'home/swiper'
+        }).then((resp) => {
             this.bannerList = resp.bannerList;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/home/swiper.json',
+                method: 'get'
+            }).then((resp) => {
+                this.bannerList = resp.bannerList;
+            });
         });
     },
     data () {

@@ -22,10 +22,17 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: '/me/my-order',
-            method: 'post'
-        }, (resp) => {
+            url: 'me/my-order'
+        }).then((resp) => {
             this.statusList = resp.statusList;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/me/my-order.json',
+                method: 'get'
+            }).then((resp) => {
+                this.statusList = resp.statusList;
+            });
         });
     },
     data () {
