@@ -30,6 +30,16 @@ export default {
             this.title = resp.title;
             this.ad = resp.ad;
             this.list = resp.list;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/category/section.json',
+                method: 'get'
+            }).then((resp) => {
+                this.title = resp.title;
+                this.ad = resp.ad;
+                this.list = resp.list;
+            });
         });
     },
     data () {

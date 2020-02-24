@@ -18,6 +18,14 @@ export default {
             url: 'home/banner'
         }).then((resp) => {
             this.rowList = resp.rowList;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/home/banner.json',
+                method: 'get'
+            }).then((resp) => {
+                this.rowList = resp.rowList;
+            });
         });
     },
     data () {

@@ -10,25 +10,12 @@ import Find from '@/views/Find'
 import Cart from '@/views/Cart'
 import Me from '@/views/Me'
 
-// 分类下 二级路由
-import Phone from '@/components/category/phone'
-import Audio from '@/components/category/audio'
-import Section from '@/components/category/section'
-import Surround from '@/components/category/surround'
-
 export default new Router({
     mode: "history",
     base: "/meizu-shop/",
     routes: [
         {path: "/home", component: Home, name: "homeLink" },
-        {path: "/category", component: Category, redirect: {name: 'phoneLink'}, name: "categoryLink",
-            children: [
-                {path: "/category/phone", component: Phone, name: "phoneLink"},
-                {path: "/category/audio", component: Audio, name: "audioLink"},
-                {path: "/category/section", component: Section, name: "sectionLink"},
-                {path: "/category/surround", component: Surround, name: "surroundLink"}
-            ]
-        },
+        {path: "/category", component: Category, name: "categoryLink"},
         {path: "/find", component: Find, name: "findLink"},
         {path: "/cart", component: Cart, name: "cartLink"},
         {path: "/me", component: Me, name: "meLink"},

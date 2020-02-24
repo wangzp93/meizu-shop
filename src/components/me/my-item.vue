@@ -14,6 +14,14 @@ export default {
             url: 'me/my-item'
         }).then((resp) => {
             this.itemList = resp.itemList;
+        }).catch((error) => {
+            this.$axios({
+                baseURL: '',
+                url: '/static/json/me/my-item.json',
+                method: 'get'
+            }).then((resp) => {
+                this.itemList = resp.itemList;
+            });
         });
     },
     data () {
