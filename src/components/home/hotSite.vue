@@ -32,7 +32,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/home/hotSite.json',
+                url: 'static/json/home/hotSite.json',
                 method: 'get'
             }).then((resp) => {
                 this.tipBarList = resp.tipBarList;

@@ -32,7 +32,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/home/swiper.json',
+                url: 'static/json/home/swiper.json',
                 method: 'get'
             }).then((resp) => {
                 this.bannerList = resp.bannerList;

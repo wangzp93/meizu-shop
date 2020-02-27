@@ -11,7 +11,7 @@ import Cart from '@/views/Cart'
 import Me from '@/views/Me'
 
 export default new Router({
-    mode: "history",
+    // mode: "history",
     base: "/meizu-shop/",
     routes: [
         {path: "/home", component: Home, name: "homeLink" },

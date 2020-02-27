@@ -23,7 +23,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/home/h-footer.json',
+                url: 'static/json/home/h-footer.json',
                 method: 'get'
             }).then((resp) => {
                 this.footerData = resp.footerData;

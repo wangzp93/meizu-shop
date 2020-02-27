@@ -21,7 +21,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/home/banner.json',
+                url: 'static/json/home/banner.json',
                 method: 'get'
             }).then((resp) => {
                 this.rowList = resp.rowList;

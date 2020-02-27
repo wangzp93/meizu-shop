@@ -17,7 +17,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/me/my-item.json',
+                url: 'static/json/me/my-item.json',
                 method: 'get'
             }).then((resp) => {
                 this.itemList = resp.itemList;

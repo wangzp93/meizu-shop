@@ -27,7 +27,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/me/my-info.json',
+                url: 'static/json/me/my-info.json',
                 method: 'get'
             }).then((resp) => {
                 this.img_src = resp.img_src;

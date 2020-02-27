@@ -48,7 +48,7 @@ exports.cssLoaders = function (options) {
       return ExtractTextPlugin.extract({
         use: loaders,
         fallback: 'vue-style-loader',
-        publicPath: '../../'
+        publicPath: '../../'        //添加该行（解释：pubicpath为打包后app.css至index.html的相对路径）
       })
     } else {
       return ['vue-style-loader'].concat(loaders)

@@ -10,7 +10,13 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // 跨域代理
+    proxyTable: {
+        '/': {
+          target: 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630',
+          changeOrigin: true,
+        },
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

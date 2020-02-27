@@ -35,7 +35,7 @@ export default {
         }).catch((error) => {
             this.$axios({
                 baseURL: '',
-                url: '/static/json/category/phone.json',
+                url: 'static/json/category/phone.json',
                 method: 'get'
             }).then((resp) => {
                 this.title = resp.title;
