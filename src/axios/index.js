@@ -1,28 +1,28 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-// axios.defaults.baseURL = 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop'
 
-// Add a response interceptor
+// 返回结果拦截器
 axios.interceptors.response.use(function (response) {
-    // Do something with response data
     if (response.status === 200) {
         return response.data;
     }
     return response;
 }, function (error) {
-    // Do something with response error
     return Promise.reject(error);
 });
+
+// axios.defaults.baseURL = 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop'
+
 Vue.prototype.$axios = function(obj) {
+    // 根据不同环境取不同地址
+    const baseURL = process.env.BASE_API;
     return axios({
         method: 'post',
-        baseURL: 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630/meizu-shop/',
+        baseURL,
         timeout: 1000,
         transformRequest: [function (data) {
-            // 可以在此处加loading
-
-            return data;
+            return JSON.stringify(data);
         }],
         ...obj
     });

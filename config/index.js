@@ -12,15 +12,18 @@ module.exports = {
     assetsPublicPath: '/',
     // 跨域代理
     proxyTable: {
-        '/': {
-          target: 'https://easy-mock.com/mock/5d1b63a94e718016e83ba630',
-          changeOrigin: true,
+        '/api': {
+            target: 'https://easy-mock.com/',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/api': '/mock/5d1b63a94e718016e83ba630/meizu-shop/'   //路径的替换规则
+            }
         },
     },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 9000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
