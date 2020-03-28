@@ -47,9 +47,9 @@ export default {
     },
     methods: {
         // 格式化路由地址
-        formatRouterLink (engName) {
+        formatRouterLink (name) {
             return {
-                name: engName + 'Link'
+                name
             };
         }
     }

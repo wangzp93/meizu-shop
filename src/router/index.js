@@ -14,11 +14,11 @@ export default new Router({
     // mode: "history",
     base: "/meizu-shop/",
     routes: [
-        {path: "/home", component: Home, name: "homeLink" },
-        {path: "/category", component: Category, name: "categoryLink"},
-        {path: "/find", component: Find, name: "findLink"},
-        {path: "/cart", component: Cart, name: "cartLink"},
-        {path: "/me", component: Me, name: "meLink"},
+        {path: "/home", component: ()=> import('@/views/Home'), name: "home" },
+        {path: "/category", component: ()=> import('@/views/Category'), name: "category"},
+        {path: "/find", component: ()=> import('@/views/Find'), name: "find"},
+        {path: "/cart", component: ()=> import('@/views/Cart'), name: "cart"},
+        {path: "/me", component: ()=> import('@/views/Me'), name: "me"},
         {path: "/", redirect: "/home"}
     ]
 })
