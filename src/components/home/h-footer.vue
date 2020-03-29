@@ -20,14 +20,6 @@ export default {
             url: 'home/h-footer'
         }).then((resp) => {
             this.footerData = resp.footerData;
-        }).catch((error) => {
-            this.$axios({
-                baseURL: '',
-                url: 'static/json/home/h-footer.json',
-                method: 'get'
-            }).then((resp) => {
-                this.footerData = resp.footerData;
-            });
         });
     },
     data () {

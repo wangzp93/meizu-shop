@@ -32,7 +32,7 @@ export default {
             this.title = resp.title;
             this.ad = resp.ad;
             this.list = resp.list;
-        }).catch((error) => {
+        })/* .catch((error) => {
             this.$axios({
                 baseURL: '',
                 url: 'static/json/category/phone.json',
@@ -42,7 +42,7 @@ export default {
                 this.ad = resp.ad;
                 this.list = resp.list;
             });
-        });
+        }) */;
     },
     data () {
         return {

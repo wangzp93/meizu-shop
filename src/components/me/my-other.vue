@@ -14,14 +14,6 @@ export default {
             url: 'me/my-other'
         }).then((resp) => {
             this.otherList = resp.otherList;
-        }).catch((error) => {
-            this.$axios({
-                baseURL: '',
-                url: 'static/json/me/my-other.json',
-                method: 'get'
-            }).then((resp) => {
-                this.otherList = resp.otherList;
-            });
         });
     },
     data () {
