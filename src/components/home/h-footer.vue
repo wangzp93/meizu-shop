@@ -17,7 +17,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: 'home/h-footer'
+            url: 'home/h-footer.json'
         }).then((resp) => {
             this.footerData = resp.footerData;
         });

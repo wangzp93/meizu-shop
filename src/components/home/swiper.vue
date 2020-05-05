@@ -12,12 +12,8 @@
 
 <script>
 // require styles
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-
-import {
-    swiper,
-    swiperSlide
-} from 'vue-awesome-swiper'
 
 export default {
     components: {
@@ -26,7 +22,7 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: 'home/swiper'
+            url: 'home/swiper.json'
         }).then((resp) => {
             this.bannerList = resp.bannerList;
         });

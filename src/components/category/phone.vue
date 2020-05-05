@@ -27,7 +27,7 @@ export default {
     },
     beforeMount () {
         this.$axios({
-            url: 'category/phone',
+            url: 'category/phone.json',
         }).then((resp) => {
             this.title = resp.title;
             this.ad = resp.ad;

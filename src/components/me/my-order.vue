@@ -22,7 +22,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: 'me/my-order'
+            url: 'me/my-order.json'
         }).then((resp) => {
             this.statusList = resp.statusList;
         });

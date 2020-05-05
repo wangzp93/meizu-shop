@@ -20,7 +20,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: 'me/my-info'
+            url: 'me/my-info.json'
         }).then((resp) => {
             this.img_src = resp.img_src;
             this.myName = resp.myName;

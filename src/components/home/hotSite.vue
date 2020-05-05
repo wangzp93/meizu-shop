@@ -25,7 +25,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: 'home/hotSite'
+            url: 'home/hotSite.json'
         }).then((resp) => {
             this.tipBarList = resp.tipBarList;
             this.hotSideList = resp.hotSideList;

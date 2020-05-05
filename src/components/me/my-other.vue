@@ -11,7 +11,7 @@
 export default {
     beforeMount () {
         this.$axios({
-            url: 'me/my-other'
+            url: 'me/my-other.json'
         }).then((resp) => {
             this.otherList = resp.otherList;
         });
