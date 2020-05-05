@@ -13,10 +13,10 @@ module.exports = {
     // 跨域代理
     proxyTable: {
         '/api': {
-            target: 'https://easy-mock.com/',
+            target: 'https://easy-mock.com',
             changeOrigin: true,
             pathRewrite: {
-                '^/api': '/mock/5d1b63a94e718016e83ba630/meizu-shop/'   //路径的替换规则
+                '^/api': '/mock/5d1b63a94e718016e83ba630/meizu-shop'   //路径的替换规则
             }
         },
     },
