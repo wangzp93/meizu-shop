@@ -5,7 +5,7 @@ let $axios = axios.create({
     method: 'post',
     baseURL: process.env.BASE_API,
     timeout: 1000,
-    // headers: {'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+    failedCount: 0,// headers: {'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'},
     headers: {'Content-type': 'application/json;charset=UTF-8'},
     transformRequest: [function (data) {
         /* if (typeof data === "object") {
@@ -30,6 +30,12 @@ $axios.interceptors.response.use(function (res) {
 }, function (err) {
     // easy-mock失败，请求本地json
     let config = err.config;
+    let failedCount = config.failedCount || 0;
+    if (failedCount > 3) {
+        return;
+    }
+    failedCount++;
+    config.failedCount = failedCount;
     config.url = config.url.replace(config.baseURL, "static/json/") + ".json";
     config.baseURL = "";
     config.method = "get";
