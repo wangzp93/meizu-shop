@@ -7,10 +7,12 @@
             </div>
         </nav>
         <div class="category-content">
-            <phone v-if="tabId == 'phone'"></phone>
-            <audio-p v-else-if="tabId == 'audio'"></audio-p>
-            <section-p v-else-if="tabId == 'section'"></section-p>
-            <surround v-else-if="tabId == 'surround'"></surround>
+            <keep-alive>
+                <phone v-if="tabId == 'phone'"></phone>
+                <audio-p v-else-if="tabId == 'audio'"></audio-p>
+                <section-p v-else-if="tabId == 'section'"></section-p>
+                <surround v-else-if="tabId == 'surround'"></surround>
+            </keep-alive>
         </div>
     </div>
 </template>
