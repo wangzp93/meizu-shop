@@ -9,7 +9,7 @@
                     <use xlink:href="#icon-home"></use>
                 </svg><br>首页
             </router-link> -->
-            <router-link v-for="(router, index) in routerList" :key="index" 
+            <router-link v-for="(router, index) in routerList" :key="index"
                 :to="formatRouterLink(router.eng_name)">
                 <svg-icon :iconName="router.eng_name"></svg-icon><br>
                 <span>{{ router.text }}</span>
@@ -57,47 +57,33 @@ export default {
 </script>
 
 <style lang="less">
-    * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-decoration: none;
-    }
-
     #app {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         .main-router-view {
-            @marginBottom: 14vw;    // 底部预留的 导航栏高度
-            
-            position: absolute;
-            width: 100%;
-            height: calc(100% - @marginBottom);
-            margin-bottom: @marginBottom;
+            flex: 1;
             overflow: auto;
         }
-    }
+        /* 导航栏 */
+        nav.main-router {
+            font-size: 2.5vw;
+            background-color: #fff;
+            padding: 1vw 0;
+            display: flex;
+            justify-content: space-around;
 
-    /* 导航栏 */
-    nav.main-router {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        font-size: 2.5vw;
-        background-color: #fff;
-        z-index: 1000;
-        padding: 1vw 0;
-        display: flex;
-        justify-content: space-around;
+            a {
+                color: #999;
+                text-align: center;
 
-        a {
-            color: #999;
-            text-align: center;
+                &.router-link-active {
+                    color: #007aff;
+                }
 
-            &.router-link-active {
-                color: #007aff;
-            }
-
-            .icon {
-                font-size: 8vw;
+                .icon {
+                    font-size: 8vw;
+                }
             }
         }
     }

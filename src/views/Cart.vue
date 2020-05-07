@@ -6,9 +6,11 @@
             </span>
             购物车
         </p>
-        <div class="content">
-            <p>购物车内还没有商品，赶紧去选购吧～</p>
-            <a href="//mall.meizu.com/" class="btn">随便逛逛</a>
+        <div class="content-wraper">
+            <div class="content">
+                <p>购物车内还没有商品，赶紧去选购吧～</p>
+                <a href="//mall.meizu.com/" class="btn">随便逛逛</a>
+            </div>
         </div>
     </div>
 </template>
@@ -17,8 +19,7 @@
 export default {
     methods: {
         back () {
-            // window.history.back();
-            this.$router.go(-1);
+            this.$router.back();
         }
     }
 }
@@ -26,10 +27,10 @@ export default {
 
 <style lang="less" scoped>
 .cart {
+    min-height: 100%;
     background: #EEE;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     .title {
         line-height: 8.8vw;
@@ -45,30 +46,31 @@ export default {
             cursor: pointer;
         }
     }
+    .content-wraper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .content {
+            padding: 5vw 0;
+            text-align: center;
 
-    .content {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        margin-top: -10vw;
+            p {
+                font-size: 3.5vw;
+                color: #666;
+            }
 
-        p {
-            font-size: 3.5vw;
-            color: #666;
-            margin: 0 0 8vw 0;
-        }
-
-        a {
-            display: inline-block;
-            width: 30vw;
-            height: 10vw;
-            line-height: 10vw;
-            font-size: 3vw;
-            background: #00C3F5;
-            color: #FFF;
-            border-radius: 0.5vw;
+            a {
+                display: inline-block;
+                width: 30vw;
+                height: 10vw;
+                margin-top: 8vw;
+                line-height: 10vw;
+                font-size: 3vw;
+                background: #00C3F5;
+                color: #FFF;
+                border-radius: 0.5vw;
+            }
         }
     }
 }
