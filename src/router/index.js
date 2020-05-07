@@ -3,13 +3,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-// 一级路由
-import Home from '@/views/Home'
-import Category from '@/views/Category'
-import Find from '@/views/Find'
-import Cart from '@/views/Cart'
-import Me from '@/views/Me'
-
 export default new Router({
     // mode: "history",
     base: "/meizu-shop/",
