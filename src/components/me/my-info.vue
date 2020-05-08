@@ -8,9 +8,7 @@
             <svg-icon iconName="msg"></svg-icon>
         </i>
         <!-- 头像 -->
-        <div class="my-icon">
-            <img :src="img_src">
-        </div>
+        <img class="my-icon" :src="img_src" />
         <!-- 昵称 -->
         <p class="my-name">{{ myName }}</p>
     </div>
@@ -65,15 +63,10 @@ export default {
     .my-icon {
         width: 21vw;
         height: 21vw;
+        display: block;
         margin: 0 auto;
-        background: #FFF;
         border-radius: 50%;
-        padding: 0.8vw;
-
-        img {
-            width: 100%;
-            border-radius: 50%;
-        }
+        box-shadow: 0 0 0 0.8vw #FFF;
     }
 
     // 昵称

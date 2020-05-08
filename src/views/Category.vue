@@ -1,35 +1,19 @@
 <template>
     <div class="category">
         <nav class="category-nav">
-            <div v-for="(nav, index) in navList" :key="index" :class="{active: nav.enName == tabId}"
-                @click="changeTab(nav.enName)">
+            <router-link v-for="(nav, index) in navList" :key="index" tag="div"
+                :to="`/category/${nav.enName}`">
                 <span></span>{{ nav.chName }}
-            </div>
+            </router-link>
         </nav>
         <div class="category-content">
-            <keep-alive>
-                <phone v-if="tabId == 'phone'"></phone>
-                <audio-p v-else-if="tabId == 'audio'"></audio-p>
-                <section-p v-else-if="tabId == 'section'"></section-p>
-                <surround v-else-if="tabId == 'surround'"></surround>
-            </keep-alive>
+            <router-view></router-view>
         </div>
     </div>
 </template>
 
 <script>
-import Phone from '@/components/category/phone.vue'
-import AudioP from '@/components/category/audio.vue'
-import SectionP from '@/components/category/section.vue'
-import Surround from '@/components/category/surround.vue'
-
 export default {
-    components: {
-        Phone,
-        AudioP,
-        SectionP,
-        Surround
-    },
     data () {
         return {
             tabId: 'phone',
@@ -52,6 +36,7 @@ export default {
 <style lang="less" scoped>
 // 导航栏
 .category {
+    height: 100%;
     .category-nav {
         width: 13vw;
         float: left;
@@ -71,7 +56,7 @@ export default {
                 vertical-align: middle;
             }
 
-            &.active {
+            &.router-link-active {
                 color: #007aff;
 
                 span {
@@ -82,9 +67,10 @@ export default {
     }
 
     .category-content {
+        height: 100%;
         margin-left: 13vw;
-        min-height: 88.5vh;
         border-left: 1px solid #ccc;
+        overflow: auto;
     }
 }
 </style>

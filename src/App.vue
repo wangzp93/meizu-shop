@@ -4,13 +4,8 @@
             <router-view></router-view>
         </div>
         <nav class="main-router">
-            <!-- <router-link :to="{name: 'homeLink'}" tag="a">
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-home"></use>
-                </svg><br>首页
-            </router-link> -->
             <router-link v-for="(router, index) in routerList" :key="index"
-                :to="formatRouterLink(router.eng_name)">
+                :to="`/${router.eng_name}`">
                 <svg-icon :iconName="router.eng_name"></svg-icon><br>
                 <span>{{ router.text }}</span>
             </router-link>
@@ -44,14 +39,6 @@ export default {
                 text: '我的'
             }]
         };
-    },
-    methods: {
-        // 格式化路由地址
-        formatRouterLink (name) {
-            return {
-                name
-            };
-        }
     }
 }
 </script>
