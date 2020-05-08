@@ -12,6 +12,6 @@ export default new Router({
         {path: "/find", component: ()=> import('@/views/Find'), name: "find"},
         {path: "/cart", component: ()=> import('@/views/Cart'), name: "cart"},
         {path: "/me", component: ()=> import('@/views/Me'), name: "me"},
-        {path: "/", redirect: "/home"}
+        {path: "*", redirect: "/home"}
     ]
 })
