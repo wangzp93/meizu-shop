@@ -38,8 +38,10 @@ export default {
 .category {
     height: 100%;
     .category-nav {
-        width: 13vw;
         float: left;
+        width: 13vw;
+        height: 100%;
+        overflow: auto;
 
         div {
             display: block;
